@@ -1,6 +1,7 @@
 html, body{
   height: 100%;
   width: 100%;
+  margin:0;
   font-size: 1.1em;
   background-color: rgb(245, 245, 248);
 }
@@ -88,6 +89,7 @@ form{
   background-color: red;
   border-radius: 20px;
   border: none;
+  margin:1em;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 15px;
@@ -139,3 +141,30 @@ h2 {
   font-weight: lighter;
   padding-top: 15px;
 }
+
+.signup {
+  grid-row: 2/3;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset{
+  grid-row: 2/3;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

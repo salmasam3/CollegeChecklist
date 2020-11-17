@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { auth } from "../firebase";
 import { UserContext } from "../Providers/UserProvider";
 import { Link } from "@reach/router";
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
-  const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
   const [error, setError] = useState(null);
   
   const onChangeHandler = event => {
@@ -15,38 +14,31 @@ const PasswordReset = () => {
       setEmail(value);
     }
   };
-  const sendResetEmail = event => {
+  const sendResetEmail = (event) => {
     event.preventDefault();
-    auth
-      .sendPasswordResetEmail(email)
-      .then(() => {
-        setEmailHasBeenSent(true);
-        setTimeout(() => {setEmailHasBeenSent(false)}, 3000);
-      })
-      .catch(() => {
+    auth.sendPasswordResetEmail(email).catch(() => {
         setError("Error resetting password");
       });
-  };
+  }
   return (
-    <div className="mt-8">
-      <h1 className="text-xl text-center font-bold mb-3">
-        Reset your Password
-      </h1>
-      <div className="border border-blue-300 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
-        <form action="">
-          {emailHasBeenSent && (
-            <div className="py-3 bg-green-400 w-full text-white text-center mb-3">
-              An email has been sent to you!
-            </div>
-          )}
-          {error !== null && (
-            <div className="py-3 bg-red-600 w-full text-white text-center mb-3">
+    <section className="container-fluid">
+      <header>
+            <a className="icon" href="https://bestcollegeaid.com"><img src="BCA_logo.png" alt= "best-college-aid-logo"></img></a>
+      </header>
+      <main>
+      <div className="reset">
+      <h1>Reset your Password</h1>
+        <form action="" className="section">
+          {error !== null && 
+            <div className="has-text-danger-dark">
               {error}
-            </div>
-          )}
-          <label htmlFor="userEmail" className="w-full block">
+            </div> 
+          }
+          <div className="field">
+          <label htmlFor="userEmail" className="label">
             Email:
           </label>
+          <div className="control">
           <input
             type="email"
             name="userEmail"
@@ -54,22 +46,28 @@ const PasswordReset = () => {
             value={email}
             placeholder="Input your email"
             onChange={onChangeHandler}
-            className="mb-3 w-full px-1 py-2"
+            className="input"
           />
-          <button
-            className="w-full bg-blue-400 text-white py-3"
-          >
-            Send me a reset link
+          </div>
+          </div>
+          <button className="submit" onClick = {() => {sendResetEmail()}}>
+            Send Reset Link
           </button>
         </form>
+        <div className="section">
         <Link
          to ="/"
-          className="my-2 text-blue-700 hover:text-blue-800 text-center block"
+          className=""
         >
-          &larr; back to sign in page
+          &larr; Back to Sign in Page
         </Link>
-      </div>
-    </div>
+        </div>
+        </div>
+        </main>
+        <footer>
+            <h2>College Checklist</h2>
+      </footer>
+      </section>
   );
 };
 export default PasswordReset;
