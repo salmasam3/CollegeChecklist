@@ -1,8 +1,7 @@
 import firebase from "@firebase/app";
 import "@firebase/auth";
 import "@firebase/firestore";
-
-
+import "@firebase/storage";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -18,10 +17,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+export const fb = firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+export const storage = firebase.storage();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = () => {
@@ -61,5 +61,7 @@ const getUserDocument = async uid => {
       console.error("Error fetching user", error);
     }
 };
-export default firestore;
+
+
+
 
