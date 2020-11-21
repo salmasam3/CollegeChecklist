@@ -5,21 +5,29 @@ import { Link } from "@reach/router";
 
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
+  const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
   const [error, setError] = useState(null);
-  
+
   const onChangeHandler = event => {
     const { name, value } = event.currentTarget;
-    
+
     if (name === "userEmail") {
       setEmail(value);
     }
   };
-  const sendResetEmail = (event) => {
+
+  const sendResetEmail = event => {
     event.preventDefault();
-    auth.sendPasswordResetEmail(email).catch(() => {
+    auth
+      .sendPasswordResetEmail(email)
+      .then(() => {
+          setEmailHasBeenSent(true);
+        setTimeout(() => {setEmailHasBeenSent(false)}, 3000);
+      })
+      .catch(() => {
         setError("Error resetting password");
       });
-  }
+  };
   return (
     <section className="container-fluid">
       <header>
@@ -29,6 +37,11 @@ const PasswordReset = () => {
       <div className="reset">
       <h1>Reset your Password</h1>
         <form action="" className="section">
+        {emailHasBeenSent && (
+            <div className="has-text-success">
+              An email has been sent to you!
+            </div>
+          )}
           {error !== null && 
             <div className="has-text-danger-dark">
               {error}
@@ -50,7 +63,9 @@ const PasswordReset = () => {
           />
           </div>
           </div>
-          <button className="submit" onClick = {() => {sendResetEmail()}}>
+          <button className="submit" onClick = {event => {
+              sendResetEmail(event);
+            }}>
             Send Reset Link
           </button>
         </form>

@@ -10,6 +10,7 @@ const ProfilePage = () => {
   
   return (
     <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
+
       <section className="container">
         <header>
           <a className="icon" href="https://bestcollegeaid.com"><img src="BCA_logo.png" alt= "best-college-aid-logo"></img></a>
@@ -34,6 +35,8 @@ const ProfilePage = () => {
             <button>Change Photo</button>
           </field>
           </div>
+
+
         </div>
         <br></br>
         <div className = "md:pl-4">
