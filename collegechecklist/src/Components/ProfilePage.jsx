@@ -16,6 +16,11 @@ const ProfilePage = () => {
       <section className="container">
         <header>
           <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
+          <div className = "topnav">
+          <a href="#ProfilePage">Checklist</a>
+          <a href="#ProfilePage">Profile</a>
+          <a href="#SignIn">Log Out</a>
+          </div>
         </header>
 
     <main>
