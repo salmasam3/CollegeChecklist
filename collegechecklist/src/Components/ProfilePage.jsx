@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { UserContext } from "../Providers/UserProvider";
-import { navigate } from "@reach/router";
 import {auth} from "../firebase";
 import { changePic } from "./ChangePic";
 // import {Dropdown} from "reactstrap/src/Dropdown"
