@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../Providers/UserProvider";
 import { navigate } from "@reach/router";
 import {auth} from "../firebase";
+import { changePic } from "./ChangePic";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
@@ -32,10 +33,9 @@ const ProfilePage = () => {
           ></div>
           <div style = {{textAlign: "center"}}> 
           <field>
-            <button>Change Photo</button>
+            <button id = "fileButton" onClick = {() => {changePic()}}>Change Photo</button>
           </field>
           </div>
-
 
         </div>
         <br></br>
