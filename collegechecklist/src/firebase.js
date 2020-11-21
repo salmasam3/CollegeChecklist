@@ -1,12 +1,12 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import { functions } from "firebase";
+import firebase from "@firebase/app";
+import "@firebase/auth";
+import "@firebase/firestore";
+
 
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCeMHyngtmHnQELdImMT9PSYbBpzoNjYlQ",
     authDomain: "collegechecklist-8927c.firebaseapp.com",
     databaseURL: "https://collegechecklist-8927c.firebaseio.com",
@@ -19,7 +19,6 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -31,6 +30,7 @@ export const signInWithGoogle = () => {
 
 export const generateUserDocument = async (user, additionalData) => {
     if (!user) return;
+
     const userRef = firestore.doc(`users/${user.uid}`);
     const snapshot = await userRef.get();
     
@@ -48,8 +48,8 @@ export const generateUserDocument = async (user, additionalData) => {
       }
     }
     return getUserDocument(user.uid);
-  };
-  const getUserDocument = async uid => {
+};
+const getUserDocument = async uid => {
     if (!uid) return null;
     try {
       const userDocument = await firestore.doc(`users/${uid}`).get();
@@ -61,4 +61,5 @@ export const generateUserDocument = async (user, additionalData) => {
       console.error("Error fetching user", error);
     }
 };
+export default firestore;
 
