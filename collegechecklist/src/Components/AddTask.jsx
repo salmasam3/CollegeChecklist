@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Moment from 'react-moment';
 import { fb } from '../firebase';
-import { CollegesProviderValue } from "../../context/index";
-import { TaskHeaderStateValue } from "../../context/index";
+import { CollegesProviderValue } from "../Context";
+import { TaskHeaderStateValue } from "../Context";
 import {auth} from '../firebase'
 
 export const AddTask = selectedCollege => {

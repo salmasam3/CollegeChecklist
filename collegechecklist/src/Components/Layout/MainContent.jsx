@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useTasks } from "../../hooks";
+import { useTasks } from "../../Hooks";
 import { CheckBox } from "../Checkbox";
-import { SelectedCollegeProviderValue } from "../../context/index";
+import { SelectedCollegeProviderValue } from "../../Context";
 import { AddTask } from "../AddTask";
 
 export const MainContent = () => {

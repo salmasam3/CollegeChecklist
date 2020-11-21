@@ -1,5 +1,5 @@
 import React from 'react';
-import { TaskHeaderStateValue } from "../../context/index";
+import { TaskHeaderStateValue } from "../../Context";
 import {auth} from '../../firebase'
 
 export const Header = () => {
@@ -7,7 +7,6 @@ export const Header = () => {
 
   const out = () => {
     auth.signOut();
-    setUser(null);
   };
 
   return (
