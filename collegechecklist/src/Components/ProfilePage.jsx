@@ -3,6 +3,7 @@ import { UserContext } from "../Providers/UserProvider";
 import { navigate } from "@reach/router";
 import {auth} from "../firebase";
 import { changePic } from "./ChangePic";
+// import {Dropdown} from "reactstrap/src/Dropdown"
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
@@ -14,7 +15,7 @@ const ProfilePage = () => {
 
       <section className="container">
         <header>
-          <a className="icon" href="https://bestcollegeaid.com"><img src="BCA_logo.png" alt= "best-college-aid-logo"></img></a>
+          <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
         </header>
 
     <main>
@@ -33,15 +34,17 @@ const ProfilePage = () => {
           ></div>
           <div style = {{textAlign: "center"}}> 
           <field>
-            <button id = "fileButton" onClick = {() => {changePic()}}>Change Photo</button>
+            <button className = "submit" id = "fileButton" onClick = {() => {changePic()}}>Change Photo</button>
           </field>
           </div>
 
         </div>
         <br></br>
+        <div className = "login">
         <div className = "md:pl-4">
         <h1 className = "text-2xl font-semibold">{displayName}</h1>
         <h1 className = "italic">{email}</h1>
+        </div>
         </div> 
         <br></br>
         <input className = "submit" type="submit" value = "Return to Checklist"/>

@@ -3,7 +3,7 @@ html, body{
   width: 100%;
   margin:0;
   font-size: 1.1em;
-  background-color: rgb(245, 245, 248);
+  background-color: #252525;
 }
 
 
@@ -19,7 +19,7 @@ html, body{
 header {
   grid-row: 1/2;
   grid-column: 1/2;
-  background-color: rgb(36, 41, 47);
+  background-color: #252525;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -45,8 +45,11 @@ main {
 h1 {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(108, 109, 124);
-  font-size: large;
+  color: white;
+  font-size: 2;
+  font-weight: bold;
+  line-height: 1.6;
+  text-transform: uppercase;
 }
 
 .login {
@@ -55,7 +58,7 @@ h1 {
   padding-bottom: 5%;
   padding-left: 10%;
   padding-right: 10%;
-  background-color: white;
+  background-color: #252525;
   display: flex;
   flex-direction: column;
   justify-content: center;
