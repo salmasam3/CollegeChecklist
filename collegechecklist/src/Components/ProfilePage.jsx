@@ -17,9 +17,9 @@ const ProfilePage = () => {
         <header>
           <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
           <div className = "topnav">
-          <a href="#ProfilePage">Checklist</a>
-          <a href="#ProfilePage">Profile</a>
-          <a href="#SignIn">Log Out</a>
+          <button href="#ProfilePage">Checklist</button>
+          <button href="#ProfilePage">Profile</button>
+          <button onClick = {() => {auth.signOut()}}>Sign out</button>
           </div>
         </header>
 
@@ -49,11 +49,6 @@ const ProfilePage = () => {
             <h1 className = "text-2xl font-semibold">{displayName}</h1>
             <h1 className = "italic">{email}</h1>
           </div>
-
-          <br></br>
-        <input className = "submit" type="submit" value = "Return to Checklist"/>
-        <button className = "submit" onClick = {() => {auth.signOut()}}>Sign out</button>
-
         </div> 
       </main>
 
