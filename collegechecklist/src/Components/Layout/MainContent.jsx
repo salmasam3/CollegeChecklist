@@ -9,7 +9,7 @@ export const MainContent = () => {
     selectedCollege,
     selectedCollegeName
   } = SelectedCollegeProviderValue();
-  const { tasks, archived } = useTasks(selectedCollege);
+  const { tasks, archivedTasks } = useTasks(selectedCollege);
   const [showArchived, setShowArchived] = useState(false);
 
   const importedTasks = () => {
@@ -45,7 +45,7 @@ export const MainContent = () => {
 
           <div className={`archived ${showArchived ? "show-archived" : ""}`}>
             <div className="archived-list">
-              {archived.map(item => (
+              {archivedTasks.map(item => (
                 <li key={item.task}> {item.task}</li>
               ))}
             </div>

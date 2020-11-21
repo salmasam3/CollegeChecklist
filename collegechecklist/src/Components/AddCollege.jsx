@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { fb } from '../firebase';
 import { generatePushId } from '../Helpers';
 import { CollegesProviderValue } from "../Context";
-import {auth} from '../firebase'
+import {auth} from '../firebase';
 
 export const AddCollege = props => {
     const user = auth.currentUser;

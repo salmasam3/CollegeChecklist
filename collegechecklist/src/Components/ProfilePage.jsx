@@ -1,4 +1,4 @@
-/*import React, { useContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../Providers/UserProvider";
 import {auth} from "../firebase";
 import { changePic } from "./ChangePic";
@@ -61,4 +61,3 @@ const ProfilePage = () => {
   ) 
 };
 export default ProfilePage;
-*/
