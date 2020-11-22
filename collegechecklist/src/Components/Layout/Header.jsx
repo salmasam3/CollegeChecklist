@@ -2,6 +2,7 @@ import React from 'react';
 import { TaskHeaderStateValue } from "../../Context";
 import {auth} from '../../firebase'
 
+
 export const Header = () => {
   const { quickState, setQuickState } = TaskHeaderStateValue();
 

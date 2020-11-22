@@ -1,11 +1,12 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,useContext } from 'react';
 import { fb } from '../firebase';
 import { generatePushId } from '../Helpers';
 import { CollegesProviderValue } from "../Context";
-import {auth} from '../firebase';
+import { UserContext, UserProvider } from "../Providers/UserProvider";
+
 
 export const AddCollege = props => {
-    const user = auth.currentUser;
+    const user = useContext(UserContext);
     const { colleges, setColleges } = CollegesProviderValue();
     const [show, setShow] = useState(false);
     const [collegeName, setCollegeName] = useState("");

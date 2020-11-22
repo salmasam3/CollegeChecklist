@@ -14,7 +14,7 @@ function Application() {
   const user = useContext(UserContext);
   return (
         user ?
-        <TaskHeaderState>
+        /*<TaskHeaderState>
           <CollegesProvider>
             <SelectedCollegeProvider>
               <div className="App">
@@ -23,8 +23,8 @@ function Application() {
               </div>
             </SelectedCollegeProvider>
           </CollegesProvider>
-        </TaskHeaderState>
-        //<ProfilePage />
+        </TaskHeaderState>*/
+        <ProfilePage />
       :
         <Router>
           <SignUp path="signUp" />
