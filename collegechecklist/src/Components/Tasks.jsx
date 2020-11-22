@@ -1,49 +1,116 @@
-import React, { useEffect } from 'react';
-import { Checkbox } from './Checkbox';
-import { AddTask } from './AddTask';
-import { useTasks } from '../Hooks';
-import { constTasks } from '../StoredVar';
-import { getTitle, getCollatedTitle, constTasksExist } from '../Helpers';
-import { useSelectedCollegeValue, useCollegesValue } from '../Context';
+import React, { useContext } from "react";
+import { UserContext } from "../Providers/UserProvider";
+import {auth, fb} from "../firebase";
+import { changePic } from "./ChangePic";
+// import {Dropdown} from "reactstrap/src/Dropdown"
 
-export const Tasks = () => {
-  const { selectedCollege } = useSelectedCollegeValue();
-  const { colleges } = useCollegesValue();
-  const { tasks } = useTasks(selectedCollege);
+const todos = [];
 
-  let collegeName = '';
+const addTask = () => {
+    fb.firestore()
+    .collection("users")
+    .doc(fb.auth().currentUser.uid)
+    .collection("todos")
+    .add({
+        title: this.todo.title,
+        createdAt: new Date(),
+        isCompleted: false
+    });
+}
 
-  if (constTasksExist(selectedCollege) && selectedCollege) {
-    collegeName = getCollatedTitle(constTasks, selectedCollege).name;
-  }
+const getTodos = () => {
+    var todosRef = fb
+        .firestore()
+        .collection("users")
+        .doc(fb.auth().currentUser.uid)
+        .collection("todos");
+    todosRef.onSnapshot(snap => {
+        todos = [];
+        snap.forEach(doc => {
+            var todo = doc.data();
+            todo.id = doc.id;
+            todos.push(todo);
+        });
+});
 
-  if (
-    colleges &&
-    colleges.length > 0 &&
-    selectedCollege &&
-    !constTasksExist(selectedCollege)
-  ) {
-    collegeName = getTitle(colleges, selectedCollege).name;
-  }
+const updateTodoItem = (docId, e) => {
+    var isChecked = e.target.checked;
+    fb
+        .firestore()
+        .collection("users")
+        .doc(fb.auth().currentUser.uid)
+        .collection("todos")
+        .doc(docId)
+        .update({
+            isCompleted: isChecked
+        });
+}
 
-  useEffect(() => {
-    document.title = `${collegeName}: CollegeChecklist`;
-  });
+const deleteToDo= (docId)=> {
+    fb
+        .firestore()
+        .collection("users")
+        .doc(fb.auth().currentUser.uid)
+        .collection("todos")
+        .doc(docId)
+        .delete();
+}
 
+const List = () => {
+  const user = useContext(UserContext);
+  const {photoURL, displayName, email} = user;
+  console.log(user);
+
+
+  
   return (
-    <div className="tasks" data-testid="tasks">
-      <h2 data-testid="college-name">{collegeName}</h2>
 
-      <ul className="tasks__list">
-        {tasks.map((task) => (
-          <li key={`${task.id}`}>
-            <Checkbox id={task.id} taskDesc={task.task} />
-            <span>{task.task}</span>
-          </li>
-        ))}
-      </ul>
+    <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
 
-      <AddTask />
+      <section className="container">
+        <header>
+          <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
+          <div className = "topnav">
+          <button href="#ProfilePage">Checklist</button>
+          <button href= "#ProfilePage" >Profile</button>
+          <button onClick = {() => {auth.signOut()}}>Sign out</button>
+          </div>
+        </header>
+
+    <main>
+        <div className = "photobox">
+          <div
+            style={{
+              background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,
+              backgroundSize: "cover",
+              height: "400px",
+              width: "400px"
+            }}
+
+            className="border border-blue-300"
+
+          ></div>
+          <div style = {{textAlign: "center"}}> 
+          <field>
+            <button className = "submit" id = "fileButton" onClick = {() => {changePic()}}>Change Photo</button>
+          </field>
+          </div>
+
+        </div>
+        <br></br>
+        <div className = "loginInfo">
+          <div className = "md:pl-4">
+            <h1 className = "text-2xl font-semibold">{displayName}</h1>
+            <h1 className = "italic">{email}</h1>
+          </div>
+        </div> 
+      </main>
+
+      <footer>
+        <h2>Best College Aid</h2>
+      </footer>
+      </section>
     </div>
-  );
-};
+    
+  ) 
+}};

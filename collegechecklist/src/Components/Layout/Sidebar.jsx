@@ -9,6 +9,10 @@ export const Sidebar = () => {
 
   const [show, setShow] = useState(false);
 
+  const quickShow = data => {
+    setShow(data);
+  };
+
   return (
     <div className="sidebar">
     <div className="list-holder">

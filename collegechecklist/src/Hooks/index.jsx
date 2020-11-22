@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import Moment from 'react-Moment';
+import Moment from 'react-moment';
 import { fb } from '../firebase';
 import {auth} from '../firebase';
 

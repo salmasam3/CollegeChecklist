@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import Moment from 'react-moment';
 import { fb } from '../firebase';
-import { CollegesProviderValue } from "../../context/index";
-import { TaskHeaderStateValue } from "../../context/index";
-import {auth} from '../firebase'
+import { CollegesProviderValue } from "../Context";
+import { TaskHeaderStateValue } from "../Context";
+import { UserContext, UserProvider } from "../Providers/UserProvider";
 
 export const AddTask = selectedCollege => {
-  const user = auth.currentUser;
+  const user = useContext(UserContext);
   const { quickState, setQuickState } = TaskHeaderStateValue();
   const [showTask, setShowTask] = useState(false);
   const [taskName, setTaskName] = useState("");
@@ -41,7 +41,7 @@ export const AddTask = selectedCollege => {
           task: taskName,
           collegeID: college || collegeId,
           userID: user.uid,
-          date: collatedDate || ""
+          date: collatedDate || "",
         })
         .then(() => {
           setShowTask(false);
@@ -85,7 +85,7 @@ export const AddTask = selectedCollege => {
                 className="select-date"
                 onChange={e => setMenueItem(e.target.value)}
               >
-                <option value="" disabled selected hidden>
+                <option value="" disabled hidden>
                   Choose date
                 </option>
                 <option value="TODAY">Today</option>
@@ -96,7 +96,7 @@ export const AddTask = selectedCollege => {
                 className="select-College"
                 onChange={e => setCollege(e.target.value)}
               >
-                <option value="" disabled selected hidden>
+                <option value="" disabled hidden>
                   Choose College
                 </option>
                 {colleges.map(college => (
