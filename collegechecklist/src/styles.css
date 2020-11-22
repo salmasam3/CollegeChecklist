@@ -15,6 +15,7 @@ html, body{
   grid-template-columns: 1fr 1fr;
 }
 
+/* site header/footer styling*/
 
 header {
   grid-row: 1/2;
@@ -26,7 +27,6 @@ header {
   justify-content: space-between;
 }
 
-
 .icon {
   padding-left: 5%;
   width: 20%;
@@ -34,40 +34,54 @@ header {
   background-color: #252525;
 }
 
-main {
-  grid-row: 2/3;
-  grid-column: 1/3;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+.topnav {
+  overflow: hidden;
+  justify-content: right;
 }
 
-h1 {
+.topnav button {
   text-align: center;
+  padding: 14px 16px;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
   font-size: 2;
   font-weight: bold;
   line-height: 1.6;
   text-transform: uppercase;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #252525;
+  color: white;
+  border: none;
 }
 
-.photobox {
-  grid-row: 2/3;
-  grid-column: 1/2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.topnav button:hover {
+  text-decoration: underline;
 }
 
-.loginInfo {
-  grid-row: 2/3;
-  grid-column: 2/3;
+footer {
+  grid-row: 3/4;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start; 
+  background-color: #252525;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: large; 
+  padding-left: 5%;
+  font-weight: lighter;
+  padding-top: 15px;
+}
+
+/* sign up / login page styling */
+
+.login {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -132,25 +146,6 @@ a:hover {
   color: red;
 }
 
-footer {
-  grid-row: 3/4;
-  grid-column: 1/3;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start; 
-  background-color: #252525;
-}
-
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  font-size: large; 
-  padding-left: 5%;
-  font-weight: lighter;
-  padding-top: 15px;
-}
-
 .signup {
   grid-row: 2/3;
   padding-top: 3%;
@@ -177,26 +172,108 @@ h2 {
   align-items: center;
 }
 
-.topnav {
-  overflow: hidden;
-  justify-content: right;
+/* profile page styling */
+
+main {
+  grid-row: 2/3;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.topnav button {
+h1 {
   text-align: center;
-  padding: 14px 16px;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
   font-size: 2;
   font-weight: bold;
   line-height: 1.6;
   text-transform: uppercase;
-  text-decoration: none;
-  font-size: 17px;
-  background-color: #252525;
-  color: white;
-  border: none;
 }
 
-.topnav button:hover {
-  text-decoration: underline;
+.photobox {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginInfo {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* checklist page styling */
+
+.sidebar, .tasks, .header, .archivedTasks {
+  background-color: white;
+}
+
+.sidebar, .tasks, .archivedTasks {
+  padding-left: 10%;
+}
+
+.mainTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 5;
+  font-weight: bold;
+  line-height: 1.6;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 2;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.addTask {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: large; 
+  padding-left: 5%;
+  font-weight: lighter;
+}
+
+.subhead {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: large; 
+  font-weight: lighter;
+}
+
+.add {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: none;
+  margin: 5px;
+  margin-top: 10px;
+  padding: 7px;
+}
+
+.cancel {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: none;
+  margin: 5px;
+  padding: 7px;
+  margin-top: 10px;
 }

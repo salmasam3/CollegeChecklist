@@ -11,13 +11,22 @@ export const Header = () => {
   };
 
   return (
+
     <div className="header">
+
+      <header>
+          <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
+          <div className = "topnav">
+          <button href="#ProfilePage">Checklist</button>
+          <button href="#ProfilePage">Profile</button>
+          <button onClick = {() => {auth.signOut()}}>Sign out</button>
+          </div>
+        </header>
+
       <div className="inner-container">
         <div className="logo">
         </div>
-        <div className="title">
-          <div className="title-inner">Todoist Clone</div>
-        </div>
+        <div className="mainTitle">Checklist</div>
         <div className="add-quick-task">
           <div
             className="add-quick-task-inner"
@@ -28,10 +37,10 @@ export const Header = () => {
             <span>
               <i className="fas fa-plus"></i>
             </span>
-            <span>Add Quick Task</span>
+            <span className = "addTask">Add Quick Task</span>
           </div>
         </div>
-        <div className="signout">
+        {/* <div className="signout">
           <button
             onClick={() => {
               out();
@@ -39,7 +48,7 @@ export const Header = () => {
           >
             Sign out
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

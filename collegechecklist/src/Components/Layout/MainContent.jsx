@@ -40,7 +40,7 @@ export const MainContent = () => {
             <span className={`arrow  ${showArchived ? "rotate" : ""}`}>
               <i className="fas fa-chevron-down fa-sm "></i>
             </span>
-            <span>Archived Tasks</span>
+            <span className = "title">Archived Tasks</span>
           </div>
 
           <div className={`archived ${showArchived ? "show-archived" : ""}`}>

@@ -65,17 +65,17 @@ export const AddTask = selectedCollege => {
           <span className="add-task-icon">
             <i className="fas fa-plus"></i>
           </span>
-          <span className="add-task-title">Add task</span>
+          <span className="title">Add task</span>
         </div>
 
         <div className={`task-box ${showTask ? "show-task" : ""}`}>
           <div className="task-popup">
             <div className="task-input">
-              <div className="add-task-title">Add Task</div>
-              <div className="task-name">Task name</div>
+              {/* <div className="subhead">Task name</div> */}
               <input
                 id="task-input"
                 type="text"
+                placeholder="Task Name"
                 onChange={e => setTaskName(e.target.value)}
               />
             </div>
