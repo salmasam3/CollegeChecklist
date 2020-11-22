@@ -17,7 +17,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+export const fb = firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -61,5 +61,7 @@ const getUserDocument = async uid => {
       console.error("Error fetching user", error);
     }
 };
-export default firestore;
+
+
+
 

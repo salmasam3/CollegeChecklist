@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { UserContext } from "../Providers/UserProvider";
-import { navigate } from "@reach/router";
 import {auth} from "../firebase";
 import { changePic } from "./ChangePic";
 // import {Dropdown} from "reactstrap/src/Dropdown"
@@ -11,15 +10,16 @@ const ProfilePage = () => {
   console.log(user);
   
   return (
+
     <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
 
       <section className="container">
         <header>
           <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
           <div className = "topnav">
-          <a href="#ProfilePage">Checklist</a>
-          <a href="#ProfilePage">Profile</a>
-          <a href="#SignIn">Log Out</a>
+          <button href="#ProfilePage">Checklist</button>
+          <button href= "#ProfilePage" >Profile</button>
+          <button onClick = {() => {auth.signOut()}}>Sign out</button>
           </div>
         </header>
 
@@ -50,11 +50,6 @@ const ProfilePage = () => {
             <h1 className = "text-2xl font-semibold">{displayName}</h1>
             <h1 className = "italic">{email}</h1>
           </div>
-
-          <br></br>
-        <input className = "submit" type="submit" value = "Return to Checklist"/>
-        <button className = "submit" onClick = {() => {auth.signOut()}}>Sign out</button>
-
         </div> 
       </main>
 
