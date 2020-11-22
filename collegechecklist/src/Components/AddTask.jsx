@@ -41,7 +41,7 @@ export const AddTask = selectedCollege => {
           task: taskName,
           collegeID: college || collegeId,
           userID: user.uid,
-          date: collatedDate || ""
+          date: collatedDate || "",
         })
         .then(() => {
           setShowTask(false);
