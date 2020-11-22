@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import Moment from 'react-moment';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
 import { TaskHeaderStateValue } from "../Context";
-import {auth} from '../firebase'
+import { UserContext, UserProvider } from "../Providers/UserProvider";
 
 export const AddTask = selectedCollege => {
-  const user = auth.currentUser;
+  const user = useContext(UserContext);
   const { quickState, setQuickState } = TaskHeaderStateValue();
   const [showTask, setShowTask] = useState(false);
   const [taskName, setTaskName] = useState("");
