@@ -29,17 +29,19 @@ const SignIn = () => {
   return (
     <section className="container-fluid">
       <header>
-            <a className="icon" href="https://bestcollegeaid.com"><img src="BCA_logo.png" alt= "best-college-aid-logo"></img></a>
+        <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
       </header>
       <main>
+      <div className="logincontainer">
       <div className="login">
         
-        <h1>Log In To Best College Aid Checklist</h1> <br></br>
+        <h2>Log In To Best College Aid Checklist</h2> <br></br>
         {error !== null && <div className = "has-text-danger-dark">{error}</div>}
         <form className="">
+          <br/>
         <div className="field">
-          <label htmlFor="userEmail" className="label">
-            Email Address:
+          <label class ="labelcss" htmlFor="userEmail" className="label">
+            Email Address
           </label>
           <div className="control">
           <input
@@ -56,8 +58,8 @@ const SignIn = () => {
           <br></br>
           </div>
           <div className="field">
-          <label htmlFor="userPassword" className="label">
-            Password:
+          <label class ="labelcss" htmlFor="userPassword" className="label">
+            Password
           </label>
           <div className="control">
           <input
@@ -77,7 +79,7 @@ const SignIn = () => {
             Log in
           </button>
         </form>
-        <p className="">or</p>
+        <p className="">or</p><br/>
         <button
           className="google"
           onClick={() => {
@@ -89,20 +91,27 @@ const SignIn = () => {
           }}>
           Sign in with Google
         </button>
+        <br/>
         <div className="my-5">
           <p className="subtitle is-6">Don't have an account?{" "}  
           <Link to="signUp" className="">
             Sign Up
           </Link>{" "} </p>
+          <div className = "forgotpass">
           <p className="subtitle is-6">
           <Link to="passwordReset" className="">
             Forgot Password?
           </Link></p>
+          </div>
         </div>
       </div>
+      </div>
+
       </main>
       <footer>
-            <h2>College Checklist</h2>
+        <br/>
+            <h3>© Best College Aid</h3>
+            <br/>
       </footer>
     </section>
   );

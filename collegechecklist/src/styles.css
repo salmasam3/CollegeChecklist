@@ -15,6 +15,35 @@ html, body{
   grid-template-columns: 1fr 1fr;
 }
 
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10%;
+}
+
+.logincontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F5F8;
+  padding-right: 100%;
+  padding-left: 100%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.forgotpass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+
+}
 
 header {
   grid-row: 1/2;
@@ -29,8 +58,8 @@ header {
 
 .icon {
   padding-left: 5%;
-  width: 20%;
-  height: 100%;
+  width: 150px;
+  height: auto;
 }
 
 main {
@@ -50,6 +79,33 @@ h1 {
   font-weight: bold;
   line-height: 1.6;
   text-transform: uppercase;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #6A6E7C;
+  font-size: 2; 
+  font-weight: bold;
+  /* padding-top: 15px; */
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #6A6E7C;
+  font-size: 2; 
+  /* font-weight: bold; */
+  /* padding-top: 15px; */
+  padding-left: 3%;
+}
+
+.labelcss {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #555863;
+  font-size: 80%; 
+  font-weight: lighter;
 }
 
 .photobox {
@@ -141,16 +197,11 @@ footer {
   align-items: flex-start;
   justify-content: flex-start; 
   background-color: #252525;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  font-size: large; 
-  padding-left: 5%;
-  font-weight: lighter;
-  padding-top: 15px;
-}
+
 
 .signup {
   grid-row: 2/3;
@@ -200,3 +251,4 @@ h2 {
 .topnav a:hover {
   text-decoration: underline;
 }
+

@@ -24,6 +24,7 @@ const ProfilePage = () => {
         </header>
 
     <main>
+      
         <div className = "photobox">
           <div
             style={{
@@ -58,7 +59,7 @@ const ProfilePage = () => {
       </main>
 
       <footer>
-        <h2>Best College Aid</h2>
+        <h2>© Best College Aid</h2>
       </footer>
       </section>
     </div>
