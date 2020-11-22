@@ -1,5 +1,5 @@
 import React, { useState, useEffect,useContext } from 'react';
-import Moment from 'react-moment';
+import moment from 'moment';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
 import { TaskHeaderStateValue } from "../Context";
@@ -25,9 +25,9 @@ export const AddTask = selectedCollege => {
   const addTask = () => {
     let collatedDate;
     if (menueItem === "TODAY") {
-      collatedDate = Moment().format("DD/MM/YYYY");
+      collatedDate = moment().format("DD/MM/YYYY");
     } else if (menueItem === "NEXT_7") {
-      collatedDate = Moment()
+      collatedDate = moment()
         .add(7, "days")
         .format("DD/MM/YYYY");
     }

@@ -22,11 +22,11 @@ export const IndividualCollege = ({ college }) => {
   return (
     <>
     <span className="project-fontawsome">
-      <i class="fas fa-dot-circle fa-sm"></i>
+      <i className="fas fa-dot-circle fa-sm"></i>
     </span>
     <span className="project-item">{college.name}</span>
     <span className="delete" onClick={() => setConfirm(true)}>
-      <i class="fas fa-trash-alt"></i>
+      <i className="fas fa-trash-alt"></i>
     </span>
 
     <div
