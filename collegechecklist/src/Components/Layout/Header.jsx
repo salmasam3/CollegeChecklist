@@ -1,6 +1,6 @@
 import React from 'react';
 import { TaskHeaderStateValue } from "../../Context";
-import {auth} from '../../firebase'
+import {auth} from '../../firebase';
 
 
 export const Header = () => {
@@ -26,8 +26,8 @@ export const Header = () => {
       <div className="inner-container">
         <div className="logo">
         </div>
-        <div className="mainTitle">Checklist</div>
-        <div className="add-quick-task">
+        {/* <div className="title">Checklist</div> */}
+        {/* <div className="add-quick-task">
           <div
             className="add-quick-task-inner"
             onClick={() => {
@@ -39,7 +39,7 @@ export const Header = () => {
             </span>
             <span className = "addTask">Add Quick Task</span>
           </div>
-        </div>
+        </div> */}
         {/* <div className="signout">
           <button
             onClick={() => {

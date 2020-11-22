@@ -24,12 +24,12 @@ function Application() {
             </SelectedCollegeProvider>
           </CollegesProvider>
         </TaskHeaderState>
-        //<ProfilePage />
       :
         <Router>
-          <SignUp path="signUp" />
-          <SignIn path="/" />
-          <PasswordReset path = "passwordReset" />
+          <SignUp path="signUp" component={SignUp} />
+          <SignIn path="/" component={SignIn} />
+          <PasswordReset path = "passwordReset" component={PasswordReset} />
+          <ProfilePage path = "ProfilePage" component={ProfilePage} />
         </Router>
 
   );
