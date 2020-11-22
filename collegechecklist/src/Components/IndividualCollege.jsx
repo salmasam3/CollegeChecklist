@@ -25,14 +25,14 @@ export const IndividualCollege = ({ college }) => {
       <i className="fas fa-dot-circle fa-sm"></i>
     </span>
     <span className="project-item">{college.name}</span>
-    <span className="delete" onClick={() => setConfirm(true)}>
+    <span className="delete" onClick={() => deleteCollege(college.docId)}>
       <i className="fas fa-trash-alt"></i>
     </span>
 
     <div
       className={`delete-project-model ${confirm ? " delete-overlay" : ""}`}
     >
-      <div className="delete-box">
+      {/* <div className="delete-box">
         <p>Do you want to delete project ("{college.name}") ?</p>
         <button className="yes" onClick={() => deleteCollege(college.docId)}>
           Yes
@@ -40,7 +40,7 @@ export const IndividualCollege = ({ college }) => {
         <button className="no" onClick={() => setConfirm(false)}>
           No
         </button>
-      </div>
+      </div> */}
     </div>
   </>
 );

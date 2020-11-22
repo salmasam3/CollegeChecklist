@@ -28,7 +28,7 @@ export const Sidebar = () => {
             <span className="inbox-font">
               <i className="fas fa-inbox"></i>
             </span>
-            <span>Inbox</span>
+            <span className="title">Inbox</span>
           </div>
         </div>
         <div
@@ -42,7 +42,7 @@ export const Sidebar = () => {
             <span className="today-font">
               <i className="fas fa-calendar-week"></i>
             </span>
-            <span>Today</span>
+            <span className = "addTask">Today</span>
           </div>
         </div>
         <div
@@ -56,7 +56,7 @@ export const Sidebar = () => {
             <span className="next_7-font">
               <i className="far fa-calendar-alt"></i>
             </span>
-            <span>Next 7 days</span>
+            <span className = "addTask">Next 7 days</span>
           </div>
         </div>
       </div>
@@ -101,11 +101,13 @@ export const Sidebar = () => {
 
       <div className="bottom-section">
         <div className="bottom-options">
-          <div>Labels</div>
-          <div>Filter</div>
+          <br></br>
+          <div className = "addTask">Labels</div>
+          <div className = "addTask">Filter</div>
         </div>
       </div>
     </div>
   </div>
 );
 };
+
