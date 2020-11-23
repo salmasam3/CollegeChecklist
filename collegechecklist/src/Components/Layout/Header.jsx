@@ -46,7 +46,7 @@ export const Header = () => {
       </div>
 
         
-        <div className="title"> College Checklist</div>
+        {/* <div className="title"> College Checklist</div> */}
 
     </div>
   );
