@@ -13,9 +13,11 @@ export const Header = () => {
   return (
 
     <div className="header">
+    
 
       <header>
           <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
+          <h1 className="mainTitle">College Checklist</h1>
           <div className = "topnav">
           <button href="#ProfilePage">Checklist</button>
           <button href="#ProfilePage">Profile</button>
@@ -26,8 +28,8 @@ export const Header = () => {
       <div className="inner-container">
         <div className="logo">
         </div>
-        <div className="mainTitle">Checklist</div>
-        <div className="add-quick-task">
+        {/* <div className="mainTitle">Checklist</div> */}
+        {/* <div className="add-quick-task">
           <div
             className="add-quick-task-inner"
             onClick={() => {
@@ -39,7 +41,7 @@ export const Header = () => {
             </span>
             <span className = "addTask">Add Quick Task</span>
           </div>
-        </div>
+        </div> */}
         {/* <div className="signout">
           <button
             onClick={() => {
