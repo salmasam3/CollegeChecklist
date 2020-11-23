@@ -13,9 +13,7 @@ export const CheckBox = ({ id }) => {
   };
 
   return (
-    <span className="checkbox-holder" onClick={archiveTask}>
-      <i className="fas fa-archive"></i>
-      <span className="tool-tip">Archive: </span>
-    </span>
+    <input type = "checkbox" className="checkbox-holder" onClick={archiveTask}>
+    </input>
   );
 };

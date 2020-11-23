@@ -1,5 +1,4 @@
 import React, { useState, useEffect,useContext } from 'react';
-import moment from 'moment';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
 import { UserContext, UserProvider } from "../Providers/UserProvider";
@@ -14,19 +13,10 @@ export const AddTask = selectedCollege => {
   const [college, setCollege] = useState("");
 
   const collegeId = selectedCollege.value;
-  // const collegeN = selectedCollege.college;
 
   const taskID = generatePushId();
 
   const addTask = () => {
-    let collatedDate;
-    if (menueItem === "TODAY") {
-      collatedDate = moment().format("DD/MM/YYYY");
-    } else if (menueItem === "NEXT_7") {
-      collatedDate = moment()
-        .add(7, "days")
-        .format("DD/MM/YYYY");
-    }
 
     taskName &&
       fb
@@ -38,14 +28,11 @@ export const AddTask = selectedCollege => {
           task: taskName,
           collegeID: college || collegeId,
           userID: user.uid,
-          date: collatedDate || "",
-          // collegeNa: collegeN,
         })
         .then(() => {
           setShowTask(false);
           setTaskName("");
           document.getElementById("select-1").selectedIndex = 0;
-          document.getElementById("select-2").selectedIndex = 0;
           document.getElementById("task-input").value = "";
         });
   };
@@ -79,17 +66,6 @@ export const AddTask = selectedCollege => {
             <div className="select-boxes">
               <select
                 id="select-1"
-                className="select-date"
-                onChange={e => setMenueItem(e.target.value)}
-              >
-                <option value="" disabled hidden>
-                  Choose date
-                </option>
-                <option value="TODAY">Today</option>
-                <option value="NEXT_7">Next 7 days</option>
-              </select>
-              <select
-                id="select-2"
                 className="select-College"
                 onChange={e => setCollege(e.target.value)}
               >
@@ -110,7 +86,6 @@ export const AddTask = selectedCollege => {
                 onClick={() => {
                   setShowTask(false);
                   document.getElementById("select-1").selectedIndex = 0;
-                  document.getElementById("select-2").selectedIndex = 0;
                   document.getElementById("task-input").value = "";
                 }}
               >
