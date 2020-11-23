@@ -27,7 +27,7 @@ export const useTasks = selectedCollege => {
           selectedCollege !== "TODAY" &&
           selectedCollege !== "NEXT_7"
             ? (filteredTasks = newTasks.filter(
-                task => task.selectedCollegeId === selectedCollege && task.archived !== true
+                task => task.selectedCollegeID === selectedCollege && task.archived !== true
               ))
             : selectedCollege === "INBOX"
             ? (filteredTasks = newTasks.filter(

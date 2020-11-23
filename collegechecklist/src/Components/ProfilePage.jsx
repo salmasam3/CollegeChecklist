@@ -27,7 +27,7 @@ const ProfilePage = () => {
         <div className = "photobox">
           <div
             style={{
-              background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,
+              background: `url(${photoURL || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png'})  no-repeat center center`,
               backgroundSize: "cover",
               height: "400px",
               width: "400px"
@@ -36,11 +36,9 @@ const ProfilePage = () => {
             className="border border-blue-300"
 
           ></div>
-          <div style = {{textAlign: "center"}}> 
-          <field>
+          {/* <div style = {{textAlign: "center"}}> 
             <button className = "submit" id = "fileButton" onClick = {() => {changePic()}}>Change Photo</button>
-          </field>
-          </div>
+          </div> */}
 
         </div>
         <br></br>
