@@ -14,7 +14,7 @@ class UserProvider extends Component {
       this.setState({ user });
     });
   };
-  render() {
+  render() { 
     const { user } = this.state;
     
     return (
