@@ -365,3 +365,7 @@ hr {
   color: black;
   padding-bottom: 5%;
 }
+
+.tool-tip {
+  boarder: solid black;
+}

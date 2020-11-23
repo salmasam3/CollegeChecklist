@@ -22,8 +22,8 @@ export const MainContent = () => {
           <div className="addTask">{collegeName}</div>
           <ul className="tasks-list">
             {tasks.map(task => (
-              <li key={task.id}>
-                <CheckBox id={task.id} />
+              <li key={task.taskID}>
+                <CheckBox id={task.taskID} />
                 <span> {task.task} </span>
               </li>
             ))}
