@@ -4,7 +4,7 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ProfilePage from "./ProfilePage";
 import PasswordReset from "./PasswordReset";
-import { UserContext } from "../Providers/UserProvider";
+import { UserContext} from "../Providers/UserProvider";
 import { Header } from './Layout/Header';
 import { Content } from './Layout/Content';
 import { CollegesProvider, SelectedCollegeProvider } from '../Context' ;
@@ -28,7 +28,6 @@ function Application() {
           <SignUp path="signUp" component={SignUp} />
           <SignIn path="/" component={SignIn} />
           <PasswordReset path = "passwordReset" component={PasswordReset} />
-          <ProfilePage path = "ProfilePage" component={ProfilePage} />
         </Router>
 
   );
