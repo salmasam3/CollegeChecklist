@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import { UserContext } from "../Providers/UserProvider";
-import {auth} from "../firebase";
-import { changePic } from "./ChangePic";
 // import {Dropdown} from "reactstrap/src/Dropdown"
 
 const ProfilePage = () => {
@@ -15,7 +13,7 @@ const ProfilePage = () => {
 
             <h2>© Best College Aid</h2>
             
-            <div class="profileInfo">
+            <div className="profileInfo">
               <h2>{displayName}</h2>
               <h2>{email}</h2>
             </div>

@@ -34,12 +34,12 @@ const SignIn = () => {
       <main>
         <div className="login">
           
-          <div class="mainTitle">Log In To Best College Aid Checklist</div> <br></br>
+          <div className="mainTitle">Log In To Best College Aid Checklist</div> <br></br>
           {error !== null && <div className = "has-text-danger-dark">{error}</div>}
           <form className="">
             <br/>
           <div className="field">
-            <label class ="labelcss" htmlFor="userEmail" className="label">
+            <label className ="labelcss" htmlFor="userEmail" className="label">
               Email Address
             </label>
             <div className="control">
@@ -56,7 +56,7 @@ const SignIn = () => {
             </div>
             </div>
             <div className="field">
-            <label class ="labelcss" htmlFor="userPassword" className="label">
+            <label className ="labelcss" htmlFor="userPassword" className="label">
               Password
             </label>
             <div className="control">
@@ -95,8 +95,8 @@ const SignIn = () => {
               Sign Up
             </Link>{" "} </p>
 
-            <div class="forgotPass">
-              <Link to="passwordReset" class="google">
+            <div className="forgotPass">
+              <Link to="passwordReset" className="google">
               Forgot Password?
             </Link>
             </div>
