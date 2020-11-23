@@ -9,12 +9,6 @@ import {
     SelectedCollegeProvider,
     SelectedCollegeProviderValue,
   } from './selected-college-context';
-
-  import {
-    TaskHeaderContext,
-    TaskHeaderState,
-    TaskHeaderStateValue
-  } from "./TaskHeaderState";
   
   export {
     CollegesContext,
@@ -23,7 +17,4 @@ import {
     SelectedCollegeContext,
     SelectedCollegeProvider,
     SelectedCollegeProviderValue,
-    TaskHeaderContext,
-    TaskHeaderState,
-    TaskHeaderStateValue,
   };

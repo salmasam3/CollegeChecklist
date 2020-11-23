@@ -1,29 +1,28 @@
 import React, {useContext} from "react";
-import { Link, Router } from "@reach/router";
+import { Router } from "@reach/router";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ProfilePage from "./ProfilePage";
 import PasswordReset from "./PasswordReset";
-import { UserContext, UserProvider } from "../Providers/UserProvider";
+import { UserContext } from "../Providers/UserProvider";
 import { Header } from './Layout/Header';
 import { Content } from './Layout/Content';
-import { CollegesProvider, SelectedCollegeProvider,TaskHeaderState } from '../Context' ;
+import { CollegesProvider, SelectedCollegeProvider } from '../Context' ;
 
 
 function Application() {
   const user = useContext(UserContext);
   return (
         user ?
-        <TaskHeaderState>
           <CollegesProvider>
             <SelectedCollegeProvider>
               <div className="App">
                 <Header />
                 <Content /> 
+                <ProfilePage />
               </div>
             </SelectedCollegeProvider>
           </CollegesProvider>
-        </TaskHeaderState>
       :
         <Router>
           <SignUp path="signUp" component={SignUp} />
