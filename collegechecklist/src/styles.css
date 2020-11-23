@@ -221,6 +221,54 @@ h1 {
   grid-template-columns: 1fr 1fr;
 } */
 
+<<<<<<< HEAD
+.tasks, .header, .archivedTasks {
+  background-color: white;
+}
+
+.header {
+  /* height: 200px; */
+  padding-bottom: 40px;
+
+}
+
+.tasks, .archivedTasks {
+  padding-left: 10%;
+}
+
+/* .archivedTasks {
+  float: right;
+} */
+
+.sidebar {
+  background-color: white;
+  /* padding-left: 10%; */
+}
+
+.top-section {
+  float: left;
+  padding-right: 50px;
+  background-color: white;
+  height: 400px;
+  padding-left: 50px;
+}
+
+.sidebartitle {
+  color: black;
+}
+
+
+
+
+.mainTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  color: White;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.6;
+  text-align: center;
+  padding-top: 10px;
+}
 .sidebar, .allTasks, .header {
   background-color: white;
 }
@@ -228,6 +276,7 @@ h1 {
 .sidebar, .allTasks {
   padding-left: 10%;
   padding-right: 10%;
+
 }
 
 .title {
@@ -236,6 +285,10 @@ h1 {
   font-size: 2;
   font-weight: bold;
   line-height: 1.6;
+}
+
+.inboxtitlee {
+  font-size: 20px;
 }
 
 .addTask {

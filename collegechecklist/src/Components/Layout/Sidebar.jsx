@@ -17,6 +17,7 @@ export const Sidebar = () => {
     <div className="sidebar">
     <div className="list-holder">
       <div className="top-section">
+      <h1 className="sidebartitle">Navigation</h1>
         <div
           className="inbox"
           onClick={() => {
@@ -28,7 +29,7 @@ export const Sidebar = () => {
             <span className="inbox-font">
               <i className="fas fa-inbox"></i>
             </span>
-            <span className="title">Inbox</span>
+            <span className="inboxtitle">Inbox</span>
           </div>
         </div>
         <div
@@ -105,7 +106,7 @@ export const Sidebar = () => {
           <div className = "addTask">Labels</div>
           <div className = "addTask">Filter</div>
         </div>
-      </div> */}
+      </div>  */}
     </div>
   </div>
 );

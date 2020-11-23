@@ -8,6 +8,7 @@ export const MainContent = () => {
   const {
     selectedCollege,
     selectedCollegeName
+    
   } = SelectedCollegeProviderValue();
   const { tasks, archivedTasks } = useTasks(selectedCollege);
   const [showArchived, setShowArchived] = useState(false);
@@ -21,7 +22,7 @@ export const MainContent = () => {
           <div className="addTask">{collegeName}</div>
           <ul className="tasks-list">
             {tasks.map(task => (
-              <li key={task.id}>
+              <li key={collegeName.id}>
                 <CheckBox id={task.id} />
                 <span> {task.task} </span>
               </li>
@@ -31,7 +32,7 @@ export const MainContent = () => {
           <hr />
         </div>
         <div className="archivedTasks">
-          <div
+          <div 
             className="title"
             onClick={() => {
               setShowArchived(!showArchived);
@@ -40,7 +41,11 @@ export const MainContent = () => {
             <span className={`arrow  ${showArchived ? "rotate" : ""}`}>
               <i className="fas fa-chevron-down fa-sm "></i>
             </span>
+
+            <span>Completed Tasks</span>
+
             <span className = "title">Completed Tasks</span>
+
           </div>
 
           <div className={`archived ${showArchived ? "show-archived" : ""}`}>
