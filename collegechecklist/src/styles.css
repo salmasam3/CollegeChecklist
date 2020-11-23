@@ -338,7 +338,7 @@ h3 {
 .title {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
-  font-size: 2;
+  font-size: 25px;
   font-weight: bold;
   line-height: 1.6;
 }
@@ -398,4 +398,19 @@ hr {
 .archived-list{
   color: black;
   padding-bottom: 5%;
+}
+
+.fullchecklist{
+  float:right;
+  padding-right: 400px;
+}
+
+.todolisttitle {
+  border-bottom: solid black;
+  font-size: 25px;
+}
+
+.bulletlist {
+  margin-left: 30px;
+  list-style-type: circle;
 }

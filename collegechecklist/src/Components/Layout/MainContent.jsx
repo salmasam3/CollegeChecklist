@@ -35,7 +35,7 @@ export const MainContent = () => {
           <AddTask value={selectedCollege} />
           <hr />
         </div>
-        <div>
+        {/* <div>
           <div>To Do List</div>
           <div>
             {colleges.map(college => (
@@ -47,7 +47,7 @@ export const MainContent = () => {
             })}
             </ul> ))}
         </div>
-        </div>
+        </div> */}
         <div className="archivedTasks">
           <div 
             className="title"
