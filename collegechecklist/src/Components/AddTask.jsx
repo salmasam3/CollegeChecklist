@@ -76,9 +76,9 @@ export const AddTask = selectedCollege => {
                 className="select-date"
                 onChange={e => setMenueItem(e.target.value)}
               >
-                <option value="" disabled hidden>
+                <select value="" disabled hidden>
                   Choose date
-                </option>
+                </select>
                 <option value="TODAY">Today</option>
                 <option value="NEXT_7">Next 7 days</option>
               </select>
@@ -87,9 +87,9 @@ export const AddTask = selectedCollege => {
                 className="select-College"
                 onChange={e => setCollege(e.target.value)}
               >
-                <option value="" disabled hidden>
+                <select value="" disabled hidden>
                   Choose College
-                </option>
+                </select>
                 {colleges.map(college => (
                   <option value={college.collegeID}>{college.name}</option>
                 ))}
