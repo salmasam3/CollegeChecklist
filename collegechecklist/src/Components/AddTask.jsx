@@ -65,7 +65,7 @@ export const AddTask = selectedCollege => {
           <span className="add-task-icon">
             <i className="fas fa-plus"></i>
           </span>
-          <span className="title">Add task</span>
+          <span className="title">Add Task</span>
         </div>
 
         <div className={`task-box ${showTask ? "show-task" : ""}`}>

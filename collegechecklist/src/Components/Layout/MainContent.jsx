@@ -16,9 +16,9 @@ export const MainContent = () => {
     let collegeName = selectedCollegeName;
 
     return (
-      <>
+      <div className="allTasks">
         <div className="tasks">
-          <h2>{collegeName}</h2>
+          <div className="addTask">{collegeName}</div>
           <ul className="tasks-list">
             {tasks.map(task => (
               <li key={task.id}>
@@ -28,8 +28,8 @@ export const MainContent = () => {
             ))}
           </ul>
           <AddTask value={selectedCollege} />
+          <hr />
         </div>
-        <hr />
         <div className="archivedTasks">
           <div
             className="title"
@@ -40,7 +40,7 @@ export const MainContent = () => {
             <span className={`arrow  ${showArchived ? "rotate" : ""}`}>
               <i className="fas fa-chevron-down fa-sm "></i>
             </span>
-            <span className = "title">Archived Tasks</span>
+            <span className = "title">Completed Tasks</span>
           </div>
 
           <div className={`archived ${showArchived ? "show-archived" : ""}`}>
@@ -51,7 +51,7 @@ export const MainContent = () => {
             </div>
           </div>
         </div>
-      </>
+        </div>
     );
   };
   return <div className="main-content">{importedTasks()}</div>;

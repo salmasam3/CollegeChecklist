@@ -90,7 +90,7 @@ const SignIn = () => {
           Sign in with Google
         </button>
         <div className="my-5">
-          <p className="subtitle is-6">Don't have an account?{" "}  
+          <p className="subtitle is-6">Don't have an account? {" "}  
           <Link to="signUp" className="">
             Sign Up
           </Link>{" "} </p>
