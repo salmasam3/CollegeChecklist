@@ -55,9 +55,6 @@ export const MainContent = () => {
               setShowArchived(!showArchived);
             }}
           >
-            <span className={`arrow  ${showArchived ? "rotate" : ""}`}>
-              <i className="fas fa-chevron-down fa-sm "></i>
-            </span>
 
             <span className = "title">Completed Tasks</span>
 

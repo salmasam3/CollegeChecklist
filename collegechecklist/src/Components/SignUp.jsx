@@ -129,7 +129,9 @@ const SignUp = () => {
       </div>
       </main>
       <footer>
-            <h2>College Checklist</h2>
+        <br/>
+            <h3>© Best College Aid</h3>
+            <br/>
       </footer>
     </section>
   );

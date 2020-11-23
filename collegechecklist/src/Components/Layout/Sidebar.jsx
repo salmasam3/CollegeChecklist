@@ -17,7 +17,7 @@ export const Sidebar = () => {
     <div className="sidebar">
     <div className="list-holder">
       <div className="top-section">
-      <h1 className="sidebartitle">Navigation</h1>
+        <h1 className="sidebartitle">Navigation</h1>
         <div
           className="inbox"
           onClick={() => {
@@ -26,9 +26,6 @@ export const Sidebar = () => {
           }}
         >
           <div className="first-item">
-            <span className="inbox-font">
-              <i className="fas fa-inbox"></i>
-            </span>
             <span className="inboxtitle">Inbox</span>
           </div>
         </div>
@@ -40,9 +37,6 @@ export const Sidebar = () => {
           }}
         >
           <div className="second-item">
-            <span className="today-font">
-              <i className="fas fa-calendar-week"></i>
-            </span>
             <span className = "addTask">Today</span>
           </div>
         </div>
@@ -54,13 +48,11 @@ export const Sidebar = () => {
           }}
         >
           <div className="third-item">
-            <span className="next_7-font">
-              <i className="far fa-calendar-alt"></i>
-            </span>
             <span className = "addTask">Next 7 days</span>
           </div>
         </div>
       </div>
+
       <div className="middle-section">
         <div className="projects">
           <div className="project-head">
@@ -70,9 +62,6 @@ export const Sidebar = () => {
                 setHideColleges(!hideColleges);
               }}
             >
-              <span className={`arrow  ${hideColleges ? "hide" : ""}`}>
-                <i className="fas fa-chevron-down fa-1x"></i>
-              </span>
               <span className="title">Colleges</span>
             </div>
             <span
