@@ -14,9 +14,10 @@ const ProfilePage = () => {
     <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
 
       <section className="container">
-      <h2>Best College Aid</h2>
 
       <main>
+
+      <h3>Best College Aid</h3>
 
         <div className = "profileInfo">
             <h2>{displayName}</h2>
