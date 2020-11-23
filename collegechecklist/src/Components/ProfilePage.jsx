@@ -11,41 +11,28 @@ const ProfilePage = () => {
   
   return (
 
-    <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
+        <main>
 
-      <section className="container">
-        <header>
-          <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
-          <div className = "topnav">
-          <button href="#ProfilePage">Checklist</button>
-          <button href= "#ProfilePage" >Profile</button>
-          <button onClick = {() => {auth.signOut()}}>Sign out</button>
-          </div>
-        </header>
+            <h2>© Best College Aid</h2>
+            
+            <div class="profileInfo">
+              <h2>{displayName}</h2>
+              <h2>{email}</h2>
+            </div>
+          
+            <div className = "photobox">
+              <div
+                style={{
+                  background: `url(${photoURL})  no-repeat center center`,
+                  backgroundSize: "cover",
+                  height: "150px",
+                  width: "150px"
+                }}
 
-    <main>
-      
-        <div className = "photobox">
-          <div
-            style={{
-              background: `url(${photoURL})  no-repeat center center`,
-              backgroundSize: "cover",
-              height: "150px",
-              width: "150px"
-            }}
+              ></div>
 
-            className="border border-blue-300"
-
-          ></div>
-
-        </div>
-      </main>
-
-      <footer>
-        <h2>© Best College Aid</h2>
-      </footer>
-      </section>
-    </div>
+            </div>
+        </main>
     
   ) 
 };
