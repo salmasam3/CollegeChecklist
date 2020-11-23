@@ -14,16 +14,17 @@ const ProfilePage = () => {
     <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
 
       <section className="container">
+        <header>
+          <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
+          <div className = "topnav">
+          <button href="#ProfilePage">Checklist</button>
+          <button href= "#ProfilePage" >Profile</button>
+          <button onClick = {() => {auth.signOut()}}>Sign out</button>
+          </div>
+        </header>
 
-      <main>
-
-      <h3>Best College Aid</h3>
-
-        <div className = "profileInfo">
-            <h2>{displayName}</h2>
-            <h2>{email}</h2>
-        </div> 
-
+    <main>
+      
         <div className = "photobox">
           <div
             style={{
@@ -40,6 +41,9 @@ const ProfilePage = () => {
         </div>
       </main>
 
+      <footer>
+        <h2>© Best College Aid</h2>
+      </footer>
       </section>
     </div>
     
