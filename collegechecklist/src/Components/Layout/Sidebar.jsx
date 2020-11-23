@@ -2,12 +2,19 @@ import React, { useState } from 'react';
 import { Colleges } from '../Colleges';
 import { SelectedCollegeProviderValue } from '../../Context';
 import { AddCollege } from '../AddCollege';
+import { CollegesProviderValue } from "../../Context";
+import { useTasks } from "../../Hooks";
 
 export const Sidebar = () => {
-  const { selectedCollege, setSelectedCollege,setSelectedCollegeName } = SelectedCollegeProviderValue();
+  const { selectedCollege, setSelectedCollege,setSelectedCollegeName, selectedCollegeName } = SelectedCollegeProviderValue();
   const [hideColleges, setHideColleges] = useState(false);
-
+  const { colleges } = CollegesProviderValue();
   const [show, setShow] = useState(false);
+
+
+  const { tasks } = useTasks(selectedCollege);
+
+
 
   const quickShow = data => {
     setShow(data);
@@ -54,6 +61,20 @@ export const Sidebar = () => {
       </div>
 
       <div className="middle-section">
+      
+      <div className="fullchecklist">
+          <div className="todolisttitle"><strong>To Do List</strong></div>
+          <div>
+            {colleges.map(college => (
+            <ul key={colleges.collegeID}>{college.name}
+            {tasks.map(function(task) {
+              if (task.collegeID === college.collegeID) {
+                return(<li className="bulletlist" key={task.taskID}>{task.task}</li>)
+              }
+            })}
+            </ul> ))}
+        </div>
+        </div>
         <div className="projects">
           <div className="project-head">
             <div
@@ -97,7 +118,9 @@ export const Sidebar = () => {
         </div>
       </div>  */}
     </div>
+    <br></br>
   </div>
+  
 );
 };
 

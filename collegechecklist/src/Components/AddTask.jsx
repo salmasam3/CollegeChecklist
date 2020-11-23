@@ -39,6 +39,7 @@ export const AddTask = selectedCollege => {
 
   return (
     <div className="add-task">
+    <br></br>
       <div className="add-task-inner">
         <div
           onClick={() => {
