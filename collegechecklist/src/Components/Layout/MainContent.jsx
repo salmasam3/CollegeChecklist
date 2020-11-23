@@ -42,8 +42,6 @@ export const MainContent = () => {
               <i className="fas fa-chevron-down fa-sm "></i>
             </span>
 
-            <span>Completed Tasks</span>
-
             <span className = "title">Completed Tasks</span>
 
           </div>

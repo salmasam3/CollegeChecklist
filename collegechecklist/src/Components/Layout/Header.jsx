@@ -16,38 +16,6 @@ export const Header = () => {
           </div>
         </header>
 
-
-      <div className="inner-container">
-        <div className="logo">
-        </div>
-        {/* <div className="mainTitle">Checklist</div> */}
-        {/* <div className="add-quick-task">
-          <div
-            className="add-quick-task-inner"
-            onClick={() => {
-              setQuickState(true);
-            }}
-          >
-            <span>
-              <i className="fas fa-plus"></i>
-            </span>
-            <span className = "addTask">Add Quick Task</span>
-          </div>
-        </div> */}
-        {/* <div className="signout">
-          <button
-            onClick={() => {
-              out();
-            }}
-          >
-            Sign out
-          </button>
-        </div> */}
-      </div>
-
-        
-        <div className="title"> College Checklist</div>
-
     </div>
   );
 };

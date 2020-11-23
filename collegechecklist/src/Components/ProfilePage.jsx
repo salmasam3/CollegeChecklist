@@ -14,23 +14,22 @@ const ProfilePage = () => {
     <div className = "mx-auto w-11/12 md:w-2/4 py-8 px-4 md:px-8">
 
       <section className="container">
-        {/* <header>
-          <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
-          <div className = "topnav">
-          <button href="#ProfilePage">Checklist</button>
-          <button href= "#ProfilePage" >Profile</button>
-          <button onClick = {() => {auth.signOut()}}>Sign out</button>
-          </div>
-        </header> */}
+      <h2>Best College Aid</h2>
 
-    <main>
+      <main>
+
+        <div className = "profileInfo">
+            <h2>{displayName}</h2>
+            <h2>{email}</h2>
+        </div> 
+
         <div className = "photobox">
           <div
             style={{
               background: `url(${photoURL})  no-repeat center center`,
               backgroundSize: "cover",
-              height: "100px",
-              width: "100px"
+              height: "150px",
+              width: "150px"
             }}
 
             className="border border-blue-300"
@@ -38,18 +37,8 @@ const ProfilePage = () => {
           ></div>
 
         </div>
-        <br></br>
-        <div className = "loginInfo">
-          <div className = "md:pl-4">
-            <h1 className = "text-2xl font-semibold">{displayName}</h1>
-            <h1 className = "italic">{email}</h1>
-          </div>
-        </div> 
       </main>
 
-      <footer>
-        <h2>Best College Aid</h2>
-      </footer>
       </section>
     </div>
     
