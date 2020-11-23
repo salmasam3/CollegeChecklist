@@ -100,13 +100,13 @@ export const Sidebar = () => {
         </div>
       </div>
 
-      <div className="bottom-section">
+      {/* <div className="bottom-section">
         <div className="bottom-options">
           <br></br>
-          {/* <div className = "addTask">Labels</div>
-          <div className = "addTask">Filter</div> */}
+          <div className = "addTask">Labels</div>
+          <div className = "addTask">Filter</div>
         </div>
-      </div>
+      </div>  */}
     </div>
   </div>
 );

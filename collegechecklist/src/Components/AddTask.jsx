@@ -2,12 +2,10 @@ import React, { useState, useEffect,useContext } from 'react';
 import moment from 'moment';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
-import { TaskHeaderStateValue } from "../Context";
 import { UserContext, UserProvider } from "../Providers/UserProvider";
 
 export const AddTask = selectedCollege => {
   const user = useContext(UserContext);
-  const { quickState, setQuickState } = TaskHeaderStateValue();
   const [showTask, setShowTask] = useState(false);
   const [taskName, setTaskName] = useState("");
   const [menueItem, setMenueItem] = useState("");
@@ -15,12 +13,6 @@ export const AddTask = selectedCollege => {
   const [college, setCollege] = useState("");
 
   const collegeId = selectedCollege.value;
-
-  useEffect(() => {
-    if (quickState) {
-      setShowTask(true);
-    }
-  }, [quickState]);
 
   const addTask = () => {
     let collatedDate;
@@ -46,7 +38,6 @@ export const AddTask = selectedCollege => {
         .then(() => {
           setShowTask(false);
           setTaskName("");
-          setQuickState(false);
           document.getElementById("select-1").selectedIndex = 0;
           document.getElementById("select-2").selectedIndex = 0;
           document.getElementById("task-input").value = "";
@@ -65,7 +56,7 @@ export const AddTask = selectedCollege => {
           <span className="add-task-icon">
             <i className="fas fa-plus"></i>
           </span>
-          <span className="title">Add task</span>
+          <span className="title">Add Task</span>
         </div>
 
         <div className={`task-box ${showTask ? "show-task" : ""}`}>
@@ -112,7 +103,6 @@ export const AddTask = selectedCollege => {
                 className="cancel"
                 onClick={() => {
                   setShowTask(false);
-                  setQuickState(false);
                   document.getElementById("select-1").selectedIndex = 0;
                   document.getElementById("select-2").selectedIndex = 0;
                   document.getElementById("task-input").value = "";

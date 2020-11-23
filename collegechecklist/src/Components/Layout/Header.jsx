@@ -1,14 +1,7 @@
 import React from 'react';
-import { TaskHeaderStateValue } from "../../Context";
-import {auth} from '../../firebase'
-
+import {auth} from '../../firebase';
 
 export const Header = () => {
-  const { quickState, setQuickState } = TaskHeaderStateValue();
-
-  const out = () => {
-    auth.signOut();
-  };
 
   return (
 
@@ -24,6 +17,7 @@ export const Header = () => {
           <button onClick = {() => {auth.signOut()}}>Sign out</button>
           </div>
         </header>
+
 
       <div className="inner-container">
         <div className="logo">
@@ -52,6 +46,10 @@ export const Header = () => {
           </button>
         </div> */}
       </div>
+
+        
+        <div className="title"> College Checklist</div>
+
     </div>
   );
 };
