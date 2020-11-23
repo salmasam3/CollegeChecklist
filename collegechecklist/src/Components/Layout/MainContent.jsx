@@ -22,7 +22,7 @@ export const MainContent = () => {
           <div className="addTask">{collegeName}</div>
           <ul className="tasks-list">
             {tasks.map(task => (
-              <li key={collegeName.id}>
+              <li key={task.id}>
                 <CheckBox id={task.id} />
                 <span> {task.task} </span>
               </li>
@@ -49,7 +49,7 @@ export const MainContent = () => {
           <div className={`archived ${showArchived ? "show-archived" : ""}`}>
             <div className="archived-list">
               {archivedTasks.map(item => (
-                <li key={item.task}> {item.task}</li>
+                <li key={item.task.id}> {item.task}</li>
               ))}
             </div>
           </div>
