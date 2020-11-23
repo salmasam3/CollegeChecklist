@@ -3,6 +3,7 @@ import moment from 'moment';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
 import { UserContext, UserProvider } from "../Providers/UserProvider";
+import { generatePushId } from '../Helpers';
 
 export const AddTask = selectedCollege => {
   const user = useContext(UserContext);
@@ -13,6 +14,7 @@ export const AddTask = selectedCollege => {
   const [college, setCollege] = useState("");
 
   const collegeId = selectedCollege.value;
+  const taskID = generatePushId();
 
   const addTask = () => {
     let collatedDate;
@@ -29,6 +31,7 @@ export const AddTask = selectedCollege => {
         .firestore()
         .collection("tasks")
         .add({
+          taskID,
           archived: false,
           task: taskName,
           collegeID: college || collegeId,
