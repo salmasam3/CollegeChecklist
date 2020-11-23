@@ -40,7 +40,7 @@ const SignIn = () => {
         <form className="">
           <br/>
         <div className="field">
-          <label class ="labelcss" htmlFor="userEmail" className="label">
+          <label className ="labelcss" htmlFor="userEmail" className="label">
             Email Address
           </label>
           <div className="control">
@@ -58,7 +58,7 @@ const SignIn = () => {
           <br></br>
           </div>
           <div className="field">
-          <label class ="labelcss" htmlFor="userPassword" className="label">
+          <label className ="labelcss" htmlFor="userPassword" className="label">
             Password
           </label>
           <div className="control">

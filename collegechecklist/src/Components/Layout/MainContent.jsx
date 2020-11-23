@@ -3,8 +3,10 @@ import { useTasks } from "../../Hooks";
 import { CheckBox } from "../Checkbox";
 import { SelectedCollegeProviderValue } from "../../Context";
 import { AddTask } from "../AddTask";
+import { CollegesProviderValue } from "../../Context";
 
 export const MainContent = () => {
+  const { colleges } = CollegesProviderValue();
   const {
     selectedCollege,
     selectedCollegeName
@@ -16,6 +18,7 @@ export const MainContent = () => {
   const importedTasks = () => {
     let collegeName = selectedCollegeName;
 
+  
     return (
       <div className="allTasks">
         <div className="tasks">
@@ -23,6 +26,7 @@ export const MainContent = () => {
           <ul className="tasks-list">
             {tasks.map(task => (
               <li key={task.taskID}>
+                <span>{collegeName}</span>
                 <CheckBox id={task.taskID} />
                 <span> {task.task} </span>
               </li>
@@ -30,6 +34,19 @@ export const MainContent = () => {
           </ul>
           <AddTask value={selectedCollege} />
           <hr />
+        </div>
+        <div>
+          <div>To Do List</div>
+          <div>
+            {colleges.map(college => (
+            <ul key={colleges.collegeID}>{college.name}
+            {tasks.map(function(task) {
+              if (task.collegeID === college.collegeID) {
+                return(<li key={task.taskID}>{task.task}</li>)
+              }
+            })}
+            </ul> ))}
+        </div>
         </div>
         <div className="archivedTasks">
           <div 
@@ -49,7 +66,7 @@ export const MainContent = () => {
           <div className={`archived ${showArchived ? "show-archived" : ""}`}>
             <div className="archived-list">
               {archivedTasks.map(item => (
-                <li key={item.task.id}> {item.task}</li>
+                <li key={item.taskID}> {item.task}</li>
               ))}
             </div>
           </div>

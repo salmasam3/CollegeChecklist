@@ -14,6 +14,8 @@ export const AddTask = selectedCollege => {
   const [college, setCollege] = useState("");
 
   const collegeId = selectedCollege.value;
+  // const collegeN = selectedCollege.college;
+
   const taskID = generatePushId();
 
   const addTask = () => {
@@ -37,6 +39,7 @@ export const AddTask = selectedCollege => {
           collegeID: college || collegeId,
           userID: user.uid,
           date: collatedDate || "",
+          // collegeNa: collegeN,
         })
         .then(() => {
           setShowTask(false);
