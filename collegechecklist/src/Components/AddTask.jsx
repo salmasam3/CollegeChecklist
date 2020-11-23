@@ -1,13 +1,11 @@
 import React, { useState, useEffect,useContext } from 'react';
-import Moment from 'react-moment';
+import moment from 'moment';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
-import { TaskHeaderStateValue } from "../Context";
 import { UserContext, UserProvider } from "../Providers/UserProvider";
 
 export const AddTask = selectedCollege => {
   const user = useContext(UserContext);
-  const { quickState, setQuickState } = TaskHeaderStateValue();
   const [showTask, setShowTask] = useState(false);
   const [taskName, setTaskName] = useState("");
   const [menueItem, setMenueItem] = useState("");
@@ -16,18 +14,12 @@ export const AddTask = selectedCollege => {
 
   const collegeId = selectedCollege.value;
 
-  useEffect(() => {
-    if (quickState) {
-      setShowTask(true);
-    }
-  }, [quickState]);
-
   const addTask = () => {
     let collatedDate;
     if (menueItem === "TODAY") {
-      collatedDate = Moment().format("DD/MM/YYYY");
+      collatedDate = moment().format("DD/MM/YYYY");
     } else if (menueItem === "NEXT_7") {
-      collatedDate = Moment()
+      collatedDate = moment()
         .add(7, "days")
         .format("DD/MM/YYYY");
     }
@@ -41,12 +33,11 @@ export const AddTask = selectedCollege => {
           task: taskName,
           collegeID: college || collegeId,
           userID: user.uid,
-          date: collatedDate || ""
+          date: collatedDate || "",
         })
         .then(() => {
           setShowTask(false);
           setTaskName("");
-          setQuickState(false);
           document.getElementById("select-1").selectedIndex = 0;
           document.getElementById("select-2").selectedIndex = 0;
           document.getElementById("task-input").value = "";
@@ -65,17 +56,17 @@ export const AddTask = selectedCollege => {
           <span className="add-task-icon">
             <i className="fas fa-plus"></i>
           </span>
-          <span className="add-task-title">Add task</span>
+          <span className="title">Add Task</span>
         </div>
 
         <div className={`task-box ${showTask ? "show-task" : ""}`}>
           <div className="task-popup">
             <div className="task-input">
-              <div className="add-task-title">Add Task</div>
-              <div className="task-name">Task name</div>
+              {/* <div className="subhead">Task name</div> */}
               <input
                 id="task-input"
                 type="text"
+                placeholder="Task Name"
                 onChange={e => setTaskName(e.target.value)}
               />
             </div>
@@ -112,7 +103,6 @@ export const AddTask = selectedCollege => {
                 className="cancel"
                 onClick={() => {
                   setShowTask(false);
-                  setQuickState(false);
                   document.getElementById("select-1").selectedIndex = 0;
                   document.getElementById("select-2").selectedIndex = 0;
                   document.getElementById("task-input").value = "";

@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import Moment from 'react-moment';
+import moment from 'moment';
 import { fb } from '../firebase';
 import {auth} from '../firebase';
 
@@ -27,7 +27,7 @@ export const useTasks = selectedCollege => {
           selectedCollege !== "TODAY" &&
           selectedCollege !== "NEXT_7"
             ? (filteredTasks = newTasks.filter(
-                task => task.selectedCollegeId === selectedCollege && task.archived !== true
+                task => task.selectedCollegeID === selectedCollege && task.archived !== true
               ))
             : selectedCollege === "INBOX"
             ? (filteredTasks = newTasks.filter(
@@ -36,14 +36,14 @@ export const useTasks = selectedCollege => {
             : selectedCollege === "TODAY"
             ? (filteredTasks = newTasks.filter(
                 task =>
-                  task.date === Moment().format("DD/MM/YYYY") &&
+                  task.date === moment().format("DD/MM/YYYY") &&
                   task.archived !== true
               ))
             : selectedCollege === "NEXT_7"
             ? (filteredTasks = newTasks.filter(
                 task =>
-                  Moment(task.date, "DD/MM/YYYY").diff(Moment(), "days") <= 7 &&
-                  Moment(task.date, "DD/MM/YYYY").diff(Moment(), "days") > 1 &&
+                  moment(task.date, "DD/MM/YYYY").diff(moment(), "days") <= 7 &&
+                  moment(task.date, "DD/MM/YYYY").diff(moment(), "days") > 1 &&
                   task.archived !== true
               ))
             : (filteredTasks = newTasks);

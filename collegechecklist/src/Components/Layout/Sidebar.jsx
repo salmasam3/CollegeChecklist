@@ -17,6 +17,7 @@ export const Sidebar = () => {
     <div className="sidebar">
     <div className="list-holder">
       <div className="top-section">
+      <h1 className="sidebartitle">Navigation</h1>
         <div
           className="inbox"
           onClick={() => {
@@ -28,7 +29,7 @@ export const Sidebar = () => {
             <span className="inbox-font">
               <i className="fas fa-inbox"></i>
             </span>
-            <span>Inbox</span>
+            <span className="inboxtitle">Inbox</span>
           </div>
         </div>
         <div
@@ -42,7 +43,7 @@ export const Sidebar = () => {
             <span className="today-font">
               <i className="fas fa-calendar-week"></i>
             </span>
-            <span>Today</span>
+            <span className = "addTask">Today</span>
           </div>
         </div>
         <div
@@ -56,7 +57,7 @@ export const Sidebar = () => {
             <span className="next_7-font">
               <i className="far fa-calendar-alt"></i>
             </span>
-            <span>Next 7 days</span>
+            <span className = "addTask">Next 7 days</span>
           </div>
         </div>
       </div>
@@ -99,13 +100,15 @@ export const Sidebar = () => {
         </div>
       </div>
 
-      <div className="bottom-section">
+      {/* <div className="bottom-section">
         <div className="bottom-options">
-          <div>Labels</div>
-          <div>Filter</div>
+          <br></br>
+          <div className = "addTask">Labels</div>
+          <div className = "addTask">Filter</div>
         </div>
-      </div>
+      </div>  */}
     </div>
   </div>
 );
 };
+

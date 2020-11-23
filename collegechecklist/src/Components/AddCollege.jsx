@@ -47,16 +47,16 @@ export const AddCollege = props => {
         <span className="font-awsome">
           <i className="fas fa-plus"></i>
         </span>
-        <span className="add-college">Add college</span>
+        <span className="title">Add College</span>
       </div>
 
       <div className={`add-college-show ${show ? "show" : ""}`}>
         <div className="text-box">
-          <div className="title">Add college</div>
-          <div className="college-name">college Name</div>
+          {/* <div className="subhead">College Name</div> */}
           <input
             id="input"
             type="text"
+            placeholder="College Name"
             onChange={e => setCollegeName(e.target.value)}
           />
           <div className="buttons">
