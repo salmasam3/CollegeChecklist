@@ -18,7 +18,7 @@ export const MainContent = () => {
     return (
       <div className="allTasks">
         <div className="tasks">
-          <h2>{collegeName}</h2>
+          <div className="addTask">{collegeName}</div>
           <ul className="tasks-list">
             {tasks.map(task => (
               <li key={task.id}>

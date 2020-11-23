@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Router } from "@reach/router";
+import { Link, Router } from "@reach/router";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ProfilePage from "./ProfilePage";
@@ -19,7 +19,7 @@ function Application() {
             <SelectedCollegeProvider>
               <div className="App">
                 <Header />
-                <Content />
+                <Content /> 
               </div>
             </SelectedCollegeProvider>
           </CollegesProvider>
