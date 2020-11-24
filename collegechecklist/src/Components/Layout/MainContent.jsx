@@ -48,7 +48,7 @@ export const MainContent = () => {
           </div>
           
           <div className="tasks">
-            <AddTask value={selectedCollege}/>
+            <AddTask />
           </div>
 
           <div className="todolist">
