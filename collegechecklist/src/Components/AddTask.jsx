@@ -55,7 +55,7 @@ export const AddTask = selectedCollege => {
 
         <div className={`task-box ${showTask ? "show-task" : ""}`}>
           <div className="task-popup">
-            <div className="task-input">
+            <div className="input-outline">
               {/* <div className="subhead">Task name</div> */}
               <input
                 id="task-input"
@@ -64,6 +64,7 @@ export const AddTask = selectedCollege => {
                 onChange={e => setTaskName(e.target.value)}
               />
             </div>
+            <div className = "input-outline">
             <div className="select-boxes">
               <select
                 id="select-1"
@@ -82,7 +83,8 @@ export const AddTask = selectedCollege => {
               <button className="add" onClick={() => addTask()}>
                 Add
               </button>
-              <button
+              </div>
+              {/* <button
                 className="cancel"
                 onClick={() => {
                   setShowTask(false);
@@ -91,7 +93,7 @@ export const AddTask = selectedCollege => {
                 }}
               >
                 Cancel
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
