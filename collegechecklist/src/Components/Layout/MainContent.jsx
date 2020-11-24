@@ -61,16 +61,16 @@ export const MainContent = () => {
               <AddCollege value={quickShow} showState={show} />
             </div>
           </div>
-
+          
           <div className="tasks">
-              AddTask value={selectedCollege} />
+            <AddTask value={selectedCollege}/>
           </div>
-
+        
           <div className="archivedTasks">
-            <div 
-              className="title" onClick={() => { setShowArchived(!showArchived);}}>
+            <div className="title" onClick={() => { setShowArchived(!showArchived);}}>
               <span className = "title">Completed Tasks</span>
             </div>
+
             <div className={`archived ${showArchived ? "show-archived" : ""}`}>
               <div className="archived-list">
                 {archivedTasks.map(item => (
