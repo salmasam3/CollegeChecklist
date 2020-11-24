@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { CollegesProviderValue, SelectedCollegeProviderValue } from '../Context';
+import { CollegesProviderValue } from '../Context';
 import { fb } from '../firebase';
 
 export const IndividualCollege = ({ college }) => {
   const [confirm, setConfirm] = useState(false);
   const { colleges, setColleges } = CollegesProviderValue();
-  const { setSelectedCollege } = SelectedCollegeProviderValue();
 
   const deleteCollege = (docId) => {
     fb

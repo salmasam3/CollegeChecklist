@@ -1,15 +1,13 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
-import {SelectedCollegeProviderValue} from "../Context";
-import { UserContext, UserProvider } from "../Providers/UserProvider";
+import { UserContext} from "../Providers/UserProvider";
 import { generatePushId } from '../Helpers';
 
-export const AddTask = selectedCollege => {
+export const AddTask = () => {
   const user = useContext(UserContext);
   const [showTask, setShowTask] = useState(false);
   const [taskName, setTaskName] = useState("");
-  const [menueItem, setMenueItem] = useState("");
   const { colleges } = CollegesProviderValue();
   const [college, setCollege] = useState("");
   
@@ -56,7 +54,6 @@ export const AddTask = selectedCollege => {
         <div className={`task-box ${showTask ? "show-task" : ""}`}>
           <div className="task-popup">
             <div className="input-outline">
-              {/* <div className="subhead">Task name</div> */}
               <input
                 id="task-input"
                 type="text"
@@ -84,16 +81,6 @@ export const AddTask = selectedCollege => {
                 Add
               </button>
               </div>
-              {/* <button
-                className="cancel"
-                onClick={() => {
-                  setShowTask(false);
-                  document.getElementById("select-1").selectedIndex = 0;
-                  document.getElementById("task-input").value = "";
-                }}
-              >
-                Cancel
-              </button> */}
             </div>
           </div>
         </div>

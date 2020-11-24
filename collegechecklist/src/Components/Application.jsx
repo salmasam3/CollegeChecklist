@@ -6,7 +6,7 @@ import ProfilePage from "./ProfilePage";
 import PasswordReset from "./PasswordReset";
 import { UserContext} from "../Providers/UserProvider";
 import { Header } from './Layout/Header';
-import { Content } from './Layout/Content';
+import {MainContent} from './Layout/MainContent';
 import { CollegesProvider, SelectedCollegeProvider } from '../Context' ;
 
 
@@ -18,7 +18,7 @@ function Application() {
             <SelectedCollegeProvider>
               <div className="App">
                 <Header />
-                <Content /> 
+                <MainContent /> 
                 <ProfilePage />
               </div>
             </SelectedCollegeProvider>

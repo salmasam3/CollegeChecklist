@@ -2,7 +2,7 @@ import React, { useState,useEffect,useContext } from 'react';
 import { fb } from '../firebase';
 import { generatePushId } from '../Helpers';
 import { CollegesProviderValue } from "../Context";
-import { UserContext, UserProvider } from "../Providers/UserProvider";
+import { UserContext} from "../Providers/UserProvider";
 
 
 export const AddCollege = props => {
@@ -53,7 +53,6 @@ export const AddCollege = props => {
 
       <div className={`add-college-show ${show ? "show" : ""}`}>
         <div className="input-outline">
-          {/* <div className="subhead">College Name</div> */}
           <input
             id="input"
             type="text"
@@ -70,16 +69,6 @@ export const AddCollege = props => {
             >
               Add
             </button>
-            {/* <button
-              className="cancel"
-              onClick={() => {
-                setShow(!show);
-                props.value(false);
-                input.value = "";
-              }}
-            >
-              Cancel
-            </button> */}
           </div>
         </div>
       </div>
