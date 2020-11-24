@@ -30,25 +30,24 @@ export const MainContent = () => {
     return (
       <div className="allTasks">
 
-          <div className="projects-title" onClick={() => {setHideColleges(!hideColleges);}}>
-                <span className="title">Colleges</span>
-  
-          <span
-            className="quick-show" onClick={() => {setShow(!show);}}>
-            <i className="fas fa-plus"></i>
-          </span>
+          <div className="adds">
 
+          <div className="add-project">
+              <AddCollege value={quickShow} showState={show} />
+            </div>
+          
+          <div className="tasks">
+            <AddTask />
+          </div>
+
+          </div>
+
+          <div className="collegesList" onClick={() => {setHideColleges(!hideColleges);}}>
+                <span className="title">Colleges</span>
 
           <div className={`hide-list-wrapper  ${hideColleges ? "hide" : ""} ${show ? "show" : ""}`}>
             <div><Colleges/></div>
             </div>
-            <div className="add-project">
-              <AddCollege value={quickShow} showState={show} />
-            </div>
-          </div>
-          
-          <div className="tasks">
-            <AddTask />
           </div>
 
           <div className="todolist">
