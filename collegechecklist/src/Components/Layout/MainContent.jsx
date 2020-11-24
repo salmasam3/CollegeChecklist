@@ -50,50 +50,36 @@ export const MainContent = () => {
           <div className="projects-title" onClick={() => {setHideColleges(!hideColleges);}}>
                 <span className="title">Colleges</span>
           </div>
-              <span
-                className="quick-show"
-                onClick={() => {
-                  setShow(!show);
-                }}
-              >
-                <i className="fas fa-plus"></i>
-              </span>
+          <span
+            className="quick-show" onClick={() => {setShow(!show);}}>
+            <i className="fas fa-plus"></i>
+          </span>
 
-            <div
-              className={`hide-list-wrapper  ${hideColleges ? "hide" : ""} ${show ? "show" : ""
-                }`}
-            >
-              <div className="outer-projects">
-                <Colleges />
-              </div>
-              <div className="add-project">
-                <AddCollege value={quickShow} showState={show} />
-              </div>
+          <div className={`hide-list-wrapper  ${hideColleges ? "hide" : ""} ${show ? "show" : ""}`}>
+            <div><Colleges/></div>
+            <div className="add-project">
+              <AddCollege value={quickShow} showState={show} />
             </div>
+          </div>
+
           <div className="tasks">
-          <AddTask value={selectedCollege} />
-         </div>
-        <div className="archivedTasks">
-          <div 
-            className="title"
-            onClick={() => {
-              setShowArchived(!showArchived);
-            }}
-          >
-
-            <span className = "title">Completed Tasks</span>
-
+              AddTask value={selectedCollege} />
           </div>
 
-          <div className={`archived ${showArchived ? "show-archived" : ""}`}>
-            <div className="archived-list">
-              {archivedTasks.map(item => (
-                <li key={item.taskID}> {item.task}</li>
-              ))}
+          <div className="archivedTasks">
+            <div 
+              className="title" onClick={() => { setShowArchived(!showArchived);}}>
+              <span className = "title">Completed Tasks</span>
+            </div>
+            <div className={`archived ${showArchived ? "show-archived" : ""}`}>
+              <div className="archived-list">
+                {archivedTasks.map(item => (
+                  <li key={item.taskID}> {item.task}</li>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        </div>
+      </div>
     );
   };
   return <div className="main-content">{importedTasks()}</div>;
