@@ -4,6 +4,7 @@ import { SelectedCollegeProviderValue } from '../../Context';
 import { AddCollege } from '../AddCollege';
 import { CollegesProviderValue } from "../../Context";
 import { useTasks } from "../../Hooks";
+import { CheckBox } from "../Checkbox";
 
 export const Sidebar = () => {
   const { selectedCollege, setSelectedCollege,setSelectedCollegeName, selectedCollegeName } = SelectedCollegeProviderValue();
@@ -14,8 +15,6 @@ export const Sidebar = () => {
 
   const { tasks } = useTasks(selectedCollege);
 
-
-
   const quickShow = data => {
     setShow(data);
   };
@@ -24,40 +23,7 @@ export const Sidebar = () => {
     <div className="sidebar">
     <div className="list-holder">
       <div className="top-section">
-        <h1 className="sidebartitle">Navigation</h1>
-        <div
-          className="inbox"
-          onClick={() => {
-            setSelectedCollege("INBOX");
-            setSelectedCollegeName("Inbox");
-          }}
-        >
-          <div className="first-item">
-            <span className="inboxtitle">Inbox</span>
-          </div>
-        </div>
-        <div
-          className="today"
-          onClick={() => {
-            setSelectedCollege("TODAY");
-            setSelectedCollege("Today");
-          }}
-        >
-          <div className="second-item">
-            <span className = "addTask">Today</span>
-          </div>
-        </div>
-        <div
-          className="next-7"
-          onClick={() => {
-            setSelectedCollege("NEXT_7");
-            setSelectedCollege("Next 7 days");
-          }}
-        >
-          <div className="third-item">
-            <span className = "addTask">Next 7 days</span>
-          </div>
-        </div>
+        
       </div>
 
       <div className="middle-section">
@@ -69,7 +35,10 @@ export const Sidebar = () => {
             <ul key={colleges.collegeID}>{college.name}
             {tasks.map(function(task) {
               if (task.collegeID === college.collegeID) {
-                return(<li className="bulletlist" key={task.taskID}>{task.task}</li>)
+                return(<li className="bulletlist" key={task.taskID}>
+                  <CheckBox id={task.taskID} />
+                  {task.task}
+                  </li>)
               }
             })}
             </ul> ))}
@@ -84,6 +53,17 @@ export const Sidebar = () => {
               }}
             >
               <span className="title">Colleges</span>
+              <div
+          className="inbox"
+          onClick={() => {
+            setSelectedCollege("INBOX");
+            setSelectedCollegeName("Inbox");
+          }}
+        >
+          <div className="first-item">
+            <span className="inboxtitle">Inbox</span>
+          </div>
+          </div>
             </div>
             <span
               className="quick-show"
