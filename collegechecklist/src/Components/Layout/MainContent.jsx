@@ -38,7 +38,7 @@ export const MainContent = () => {
                     {tasks.map(function (task) {
                       if (task.collegeID === college.collegeID) {
                         return (<li className="bulletlist" key={task.taskID}>
-                          <CheckBox id={task.taskID} />
+                          <CheckBox id={task.id} />
                           {task.task}
                         </li>)
                       }
