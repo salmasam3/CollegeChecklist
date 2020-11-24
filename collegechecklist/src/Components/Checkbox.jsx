@@ -13,7 +13,6 @@ export const CheckBox = ({ id }) => {
   };
 
   return (
-    <input type = "checkbox" className="checkbox-holder" onClick={archiveTask}>
-    </input>
+    <input type = "checkbox" className="checkbox" onClick={archiveTask}></input>
   );
 };

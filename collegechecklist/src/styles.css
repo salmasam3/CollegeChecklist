@@ -412,5 +412,8 @@ hr {
 
 .bulletlist {
   margin-left: 30px;
-  list-style-type: circle;
+}
+
+.checkbox {
+  margin-right: 5px;
 }

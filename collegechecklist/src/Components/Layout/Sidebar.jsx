@@ -4,6 +4,7 @@ import { SelectedCollegeProviderValue } from '../../Context';
 import { AddCollege } from '../AddCollege';
 import { CollegesProviderValue } from "../../Context";
 import { useTasks } from "../../Hooks";
+import { CheckBox } from "../Checkbox";
 
 export const Sidebar = () => {
   const { selectedCollege, setSelectedCollege,setSelectedCollegeName, selectedCollegeName } = SelectedCollegeProviderValue();
@@ -13,8 +14,6 @@ export const Sidebar = () => {
 
 
   const { tasks } = useTasks(selectedCollege);
-
-
 
   const quickShow = data => {
     setShow(data);
@@ -36,7 +35,10 @@ export const Sidebar = () => {
             <ul key={colleges.collegeID}>{college.name}
             {tasks.map(function(task) {
               if (task.collegeID === college.collegeID) {
-                return(<li className="bulletlist" key={task.taskID}>{task.task}</li>)
+                return(<li className="bulletlist" key={task.taskID}>
+                  <CheckBox id={task.taskID} />
+                  {task.task}
+                  </li>)
               }
             })}
             </ul> ))}
