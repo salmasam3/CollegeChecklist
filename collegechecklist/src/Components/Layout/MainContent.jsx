@@ -6,6 +6,7 @@ import { CollegesProviderValue } from "../../Context";
 import { CheckBox } from "../Checkbox";
 
 export const MainContent = () => {
+
   const { colleges } = CollegesProviderValue();
   const {
     selectedCollege,
@@ -22,16 +23,6 @@ export const MainContent = () => {
     return (
       <div className="allTasks">
         <div className="tasks">
-          <div className="addTask">{collegeName}</div>
-          <ul className="tasks-list">
-            {tasks.map(task => (
-              <li key={task.taskID}>
-                <span>{collegeName}</span>
-                <CheckBox id={task.taskID} />
-                <span> {task.task} </span>
-              </li>
-            ))}
-          </ul>
           <AddTask value={selectedCollege} />
           <hr />
         </div>

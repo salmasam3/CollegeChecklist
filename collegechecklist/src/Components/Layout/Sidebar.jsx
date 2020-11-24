@@ -42,6 +42,7 @@ export const Sidebar = () => {
               }
             })}
             </ul> ))}
+            
         </div>
         </div>
         <div className="projects">

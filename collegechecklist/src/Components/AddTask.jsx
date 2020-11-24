@@ -1,6 +1,7 @@
 import React, { useState, useEffect,useContext } from 'react';
 import { fb } from '../firebase';
 import { CollegesProviderValue } from "../Context";
+import {SelectedCollegeProviderValue} from "../Context";
 import { UserContext, UserProvider } from "../Providers/UserProvider";
 import { generatePushId } from '../Helpers';
 
@@ -11,6 +12,7 @@ export const AddTask = selectedCollege => {
   const [menueItem, setMenueItem] = useState("");
   const { colleges } = CollegesProviderValue();
   const [college, setCollege] = useState("");
+  
 
   const collegeId = selectedCollege.value;
 
@@ -32,7 +34,7 @@ export const AddTask = selectedCollege => {
         .then(() => {
           setShowTask(false);
           setTaskName("");
-          document.getElementById("select-1").selectedIndex = 0;
+          document.getElementById("select-2").selectedIndex = 0;
           document.getElementById("task-input").value = "";
         });
   };
@@ -66,7 +68,7 @@ export const AddTask = selectedCollege => {
             </div>
             <div className="select-boxes">
               <select
-                id="select-1"
+                id="select-2"
                 className="select-College"
                 onChange={e => setCollege(e.target.value)}
               >
