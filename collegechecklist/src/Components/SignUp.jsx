@@ -34,11 +34,12 @@ const SignUp = () => {
   };
   return (
     <section className="container-fluid">
-      <header>
-            <a className="icon" href="https://bestcollegeaid.com"><img src="BCA_logo.png" alt= "best-college-aid-logo"></img></a>
-      </header>
       <main>
-      <div className="signup">
+
+      <div className="login">
+
+      <a className="iconSI" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
+
       <h1>Sign Up</h1>
         {error !== null && (
           <div className="has-text-danger-dark">
@@ -106,7 +107,7 @@ const SignUp = () => {
             Sign up
           </button>
         </form>
-        <p className="">or</p>
+        <p className="signintext">or</p><br/>
         <button
           className="google"
           onClick={() => {
@@ -119,10 +120,10 @@ const SignUp = () => {
           Sign in with Google
         </button>
         <div className="my-4">
-        <p className="subtitle is-6">
+        <p className="subtitle is-6 signintext">
           Already have an account?{" "}
-          <Link to="/" className="">
-            Sign in here
+          <Link to="/" className="signup">
+            Sign in
           </Link>
         </p>
         </div>

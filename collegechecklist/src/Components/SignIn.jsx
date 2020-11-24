@@ -28,11 +28,10 @@ const SignIn = () => {
 
   return (
     <section className="container-fluid">
-      <header>
-        <a className="icon" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
-      </header>
       <main>
         <div className="login">
+
+        <a className="iconSI" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
           
           <div className="mainTitle">Log In To Best College Aid Checklist</div> <br></br>
           {error !== null && <div className = "has-text-danger-dark">{error}</div>}
@@ -72,11 +71,11 @@ const SignIn = () => {
             />
             </div>
             </div>
-            <button className="submit" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
+            <button className="submit google" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
               Log in
             </button>
           </form>
-          <p className="">or</p><br/>
+          <p className="signintext">or</p><br/>
           <button
             className="google"
             onClick={() => {
@@ -90,8 +89,8 @@ const SignIn = () => {
           </button>
           <br/>
           <div>
-            <p className="subtitle is-6">Don't have an account? {" "}  
-            <Link to="signUp" className="">
+            <p className="subtitle is-6 signintext">Don't have an account? {" "}  
+            <Link to="signUp" className="signintext signup">
               Sign Up
             </Link>{" "} </p>
 

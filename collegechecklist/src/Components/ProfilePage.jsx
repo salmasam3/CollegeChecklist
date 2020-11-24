@@ -18,18 +18,13 @@ const ProfilePage = () => {
               <h2>{email}</h2>
             </div>
           
-            <div className = "photobox">
-              <div
+              <div className = "photobox"
                 style={{
                   background: `url(${photoURL})  no-repeat center center`,
-                  backgroundSize: "cover",
-                  height: "150px",
-                  width: "150px"
+                  // backgroundSize: "cover",
                 }}
 
               ></div>
-
-            </div>
         </main>
     
   ) 

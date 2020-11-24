@@ -34,10 +34,14 @@ header {
 }
 
 .icon {
-  padding-left: 5%;
-  padding-top: 5%;
-  width: 200px;
-  height: auto;
+  width: 10em;
+  height: 10em;
+  margin-left: 5%;
+}
+
+.iconSI {
+  width: 20%;
+  height: 20%;
 }
 
 .topnav {
@@ -159,11 +163,16 @@ form{
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
+  font-size: 15px;
 }
 
 .google:hover {
   background-color: darkred;
   cursor: pointer;
+}
+
+.signup:hover {
+  color: red;
 }
 
 a:hover {
@@ -215,6 +224,10 @@ footer {
   align-items: center;
 }
 
+.signintext {
+  color: white;
+}
+
 /* PROFILE PAGE */
 
 main {
@@ -222,8 +235,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 1em;
 }
 
 h1 {
@@ -242,6 +254,8 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: 10px;
+  width: 10em;
+  height: 10em;
 }
 
 /* .loginInfo {
@@ -303,7 +317,7 @@ h3 {
 .mainTitle {
   font-family: Arial, Helvetica, sans-serif;
   color: White;
-  font-size: 40px;
+  font-size: 1.5em;
   font-weight: bold;
   line-height: 1.6;
   text-align: center;
@@ -318,6 +332,8 @@ h3 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 10%;
 }
 
 .adds, .collegesList, .todolist, .archivedTasks {
@@ -357,6 +373,15 @@ h3 {
   color: black;
 }
 
+.delete {
+  margin-left: 5px;
+  background-color: red;
+}
+
+.delete:hover {
+  background-color: grey;
+}
+
 .add {
   background-color: red;
   color: white;
@@ -389,7 +414,6 @@ hr {
 
 .archived-list{
   color: black;
-  padding-bottom: 5%;
 }
 
 .todolisttitle {
@@ -401,9 +425,17 @@ hr {
   margin-left: 30px;
 }
 
+.colleges-inner {
+  list-style: none;
+}
+
 .input-outline {
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
+}
+
+p {
+  font-size: 15px;
 }

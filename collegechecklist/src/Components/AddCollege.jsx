@@ -44,7 +44,6 @@ export const AddCollege = props => {
           setShow(!show);
         }}
       >
-      <br></br>
         <span className="font-awsome">
           <i className="fas fa-plus"></i>
         </span>

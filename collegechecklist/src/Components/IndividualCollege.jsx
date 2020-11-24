@@ -19,18 +19,13 @@ export const IndividualCollege = ({ college }) => {
 
   return (
     <>
-    <span className="project-fontawsome">
+    {/* <span className="project-fontawsome">
       <i className="fas fa-dot-circle fa-sm"></i>
-    </span>
+    </span> */}
     <span className="project-item">{college.name}</span>
     <span className="delete" onClick={() => deleteCollege(college.docId)}>
       <i className="fas fa-trash-alt"></i>
     </span>
-
-    <div
-      className={`delete-project-model ${confirm ? " delete-overlay" : ""}`}
-    >
-    </div>
   </>
 );
 };

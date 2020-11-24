@@ -29,11 +29,11 @@ const PasswordReset = () => {
   };
   return (
     <section className="container-fluid">
-      <header>
-            <a className="icon" href="https://bestcollegeaid.com"><img src="BCA_logo.png" alt= "best-college-aid-logo"></img></a>
-      </header>
       <main>
-      <div className="reset">
+      <div className="login">
+
+      <a className="iconSI" href="https://bestcollegeaid.com"><img src="bcalogo.png" alt= "best-college-aid-logo"></img></a>
+
       <h1>Reset your Password</h1>
         <form action="" className="section">
         {emailHasBeenSent && (
@@ -62,7 +62,7 @@ const PasswordReset = () => {
           />
           </div>
           </div>
-          <button className="submit" onClick = {event => {
+          <button className="submit google" onClick = {event => {
               sendResetEmail(event);
             }}>
             Send Reset Link

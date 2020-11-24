@@ -43,7 +43,8 @@ export const MainContent = () => {
           </div>
 
           <div className="collegesList" onClick={() => {setHideColleges(!hideColleges);}}>
-                <span className="title">Colleges</span>
+            <div className="todolisttitle"><strong>Colleges</strong></div>
+            <p>Click on each college to view tasks</p>
 
           <div className={`hide-list-wrapper  ${hideColleges ? "hide" : ""} ${show ? "show" : ""}`}>
             <div><Colleges/></div>
@@ -58,7 +59,7 @@ export const MainContent = () => {
                     {tasks.map(function (task) {
                       if (task.collegeID === college.collegeID) {
                         return (<li className="bulletlist" key={task.taskID}>
-                          <CheckBox id={task.taskID} />
+                          <CheckBox id={task.id} />
                           {task.task}
                         </li>)
                       }
@@ -68,17 +69,12 @@ export const MainContent = () => {
           </div>
         
           <div className="archivedTasks">
-            <div className="title" onClick={() => { setShowArchived(!showArchived);}}>
-              <div className="todolisttitle"><strong>Completed Tasks</strong></div>
-            </div>
-
-            <div className={`archived ${showArchived ? "show-archived" : ""}`}>
+            <div className="todolisttitle"><strong>Completed Tasks</strong></div>
               <div className="archived-list">
                 {archivedTasks.map(item => (
                   <li key={item.taskID}> {item.task}</li>
                 ))}
               </div>
-            </div>
           </div>
       </div>
     );

@@ -37,7 +37,6 @@ export const AddTask = () => {
 
   return (
     <div className="add-task">
-    <br></br>
       <div className="add-task-inner">
         <div
           onClick={() => {
