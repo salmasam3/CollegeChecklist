@@ -49,13 +49,6 @@ export const MainContent = () => {
 
           <div className="projects-title" onClick={() => {setHideColleges(!hideColleges);}}>
                 <span className="title">Colleges</span>
-                <div className="inbox" onClick={() => { setSelectedCollege("INBOX"); setSelectedCollegeName("Inbox");
-                  }}>
-                  
-                  <div className="first-item">
-                    <span className="inboxtitle">Inbox</span>
-                  </div>
-                </div>
           </div>
               <span
                 className="quick-show"
