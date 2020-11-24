@@ -48,7 +48,7 @@ export const AddTask = () => {
           <span className="add-task-icon">
             <i className="fas fa-plus"></i>
           </span>
-          <span className="title">Add Task</span>
+          <span className="title">2. Add Tasks</span>
         </div>
 
         <div className={`task-box ${showTask ? "show-task" : ""}`}>

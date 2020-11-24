@@ -30,6 +30,27 @@ export const MainContent = () => {
     return (
       <div className="allTasks">
 
+          <div className="projects-title" onClick={() => {setHideColleges(!hideColleges);}}>
+                <span className="title">Colleges</span>
+  
+          <span
+            className="quick-show" onClick={() => {setShow(!show);}}>
+            <i className="fas fa-plus"></i>
+          </span>
+
+
+          <div className={`hide-list-wrapper  ${hideColleges ? "hide" : ""} ${show ? "show" : ""}`}>
+            <div><Colleges/></div>
+            </div>
+            <div className="add-project">
+              <AddCollege value={quickShow} showState={show} />
+            </div>
+          </div>
+          
+          <div className="tasks">
+            <AddTask value={selectedCollege}/>
+          </div>
+
           <div className="todolist">
               <div className="todolisttitle"><strong>To Do List</strong></div>
               <div>
@@ -46,29 +67,10 @@ export const MainContent = () => {
                   </ul>))}
               </div>
           </div>
-
-          <div className="projects-title" onClick={() => {setHideColleges(!hideColleges);}}>
-                <span className="title">Colleges</span>
-          </div>
-          <span
-            className="quick-show" onClick={() => {setShow(!show);}}>
-            <i className="fas fa-plus"></i>
-          </span>
-
-          <div className={`hide-list-wrapper  ${hideColleges ? "hide" : ""} ${show ? "show" : ""}`}>
-            <div><Colleges/></div>
-            <div className="add-project">
-              <AddCollege value={quickShow} showState={show} />
-            </div>
-          </div>
-          
-          <div className="tasks">
-            <AddTask value={selectedCollege}/>
-          </div>
         
           <div className="archivedTasks">
             <div className="title" onClick={() => { setShowArchived(!showArchived);}}>
-              <span className = "title">Completed Tasks</span>
+              <div className="todolisttitle"><strong>Completed Tasks</strong></div>
             </div>
 
             <div className={`archived ${showArchived ? "show-archived" : ""}`}>

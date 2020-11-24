@@ -37,7 +37,7 @@ export const AddCollege = props => {
         }, [props.showState]);
   
     return (
-      <>
+      <div className="addCollegeWrapper">
       <div
         className="add-college-inner"
         onClick={() => {
@@ -48,7 +48,7 @@ export const AddCollege = props => {
         <span className="font-awsome">
           <i className="fas fa-plus"></i>
         </span>
-        <span className="title">Add College</span>
+        <span className="title">1. Add Colleges</span>
       </div>
 
       <div className={`add-college-show ${show ? "show" : ""}`}>
@@ -72,7 +72,7 @@ export const AddCollege = props => {
           </div>
         </div>
       </div>
-    </>
+    </div>
     );
   };
   
