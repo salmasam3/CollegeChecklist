@@ -52,7 +52,7 @@ export const AddCollege = props => {
       </div>
 
       <div className={`add-college-show ${show ? "show" : ""}`}>
-        <div className="text-box">
+        <div className="input-outline">
           {/* <div className="subhead">College Name</div> */}
           <input
             id="input"
@@ -70,7 +70,7 @@ export const AddCollege = props => {
             >
               Add
             </button>
-            <button
+            {/* <button
               className="cancel"
               onClick={() => {
                 setShow(!show);
@@ -79,7 +79,7 @@ export const AddCollege = props => {
               }}
             >
               Cancel
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
