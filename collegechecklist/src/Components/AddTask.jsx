@@ -14,8 +14,6 @@ export const AddTask = selectedCollege => {
   const [college, setCollege] = useState("");
   
 
-  const collegeId = selectedCollege.value;
-
   const taskID = generatePushId();
 
   const addTask = () => {
@@ -28,7 +26,7 @@ export const AddTask = selectedCollege => {
           taskID,
           archived: false,
           task: taskName,
-          collegeID: college || collegeId,
+          collegeID: college,
           userID: user.uid,
         })
         .then(() => {

@@ -15,7 +15,6 @@ export const IndividualCollege = ({ college }) => {
       .delete()
       .then(() => {
         setColleges([...colleges]);
-        setSelectedCollege('INBOX');
       });
   };
 
@@ -32,15 +31,6 @@ export const IndividualCollege = ({ college }) => {
     <div
       className={`delete-project-model ${confirm ? " delete-overlay" : ""}`}
     >
-      {/* <div className="delete-box">
-        <p>Do you want to delete project ("{college.name}") ?</p>
-        <button className="yes" onClick={() => deleteCollege(college.docId)}>
-          Yes
-        </button>
-        <button className="no" onClick={() => setConfirm(false)}>
-          No
-        </button>
-      </div> */}
     </div>
   </>
 );

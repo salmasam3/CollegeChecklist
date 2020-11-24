@@ -1,13 +1,8 @@
-import { constTasks } from '../StoredVar';
-
 export const getTitle = (colleges, collegeID) =>
   colleges.find(college => college.collegeID === collegeID);
 
 export const getConstTitle = (colleges, key) =>
   colleges.find(college => college.key === key);
-
-export const constTasksExist = selectedCollege =>
-  constTasks.find(task => task.key === selectedCollege);
 
 export const generatePushId = (() => {
   var PUSH_CHARS =

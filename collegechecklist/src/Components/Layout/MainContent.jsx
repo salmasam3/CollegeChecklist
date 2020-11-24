@@ -65,17 +65,6 @@ export const MainContent = () => {
                 }}
               >
                 <span className="title">Colleges</span>
-                <div
-                  className="inbox"
-                  onClick={() => {
-                    setSelectedCollege("INBOX");
-                    setSelectedCollegeName("Inbox");
-                  }}
-                >
-                  <div className="first-item">
-                    <span className="inboxtitle">Inbox</span>
-                  </div>
-                </div>
               </div>
               <span
                 className="quick-show"
@@ -106,19 +95,6 @@ export const MainContent = () => {
           <AddTask value={selectedCollege} />
           <hr />
         </div>
-        {/* <div>
-          <div>To Do List</div>
-          <div>
-            {colleges.map(college => (
-            <ul key={colleges.collegeID}>{college.name}
-            {tasks.map(function(task) {
-              if (task.collegeID === college.collegeID) {
-                return(<li key={task.taskID}>{task.task}</li>)
-              }
-            })}
-            </ul> ))}
-        </div>
-        </div> */}
         <div className="archivedTasks">
           <div 
             className="title"

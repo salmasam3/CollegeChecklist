@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState } from 'react';
 export const SelectedCollegeContext = createContext();
 
 export const SelectedCollegeProvider = ({ children }) => {
-  const [selectedCollege, setSelectedCollege] = useState("INBOX");
+  const [selectedCollege, setSelectedCollege] = useState("");
   const [selectedCollegeName, setSelectedCollegeName] = useState("");
 
   return (
