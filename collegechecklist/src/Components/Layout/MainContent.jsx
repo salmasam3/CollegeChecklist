@@ -28,55 +28,35 @@ export const MainContent = () => {
 
   
     return (
-  
-
-
       <div className="allTasks">
-        <div className="list-holder">
-        <div className="top-section">
 
-        </div>
-
-        <div className="middle-section">
-
-          <div className="fullchecklist">
-            <div className="todolisttitle"><strong>To Do List</strong></div>
-            <div>
-              {colleges.map(college => (
-                <ul key={colleges.collegeID}>{college.name}
-                  {tasks.map(function (task) {
-                    if (task.collegeID === college.collegeID) {
-                      return (<li className="bulletlist" key={task.taskID}>
-                        <CheckBox id={task.taskID} />
-                        {task.task}
-                      </li>)
-                    }
-                  })}
-                </ul>))}
-
-            </div>
+          <div className="todolist">
+              <div className="todolisttitle"><strong>To Do List</strong></div>
+              <div>
+                {colleges.map(college => (
+                  <ul key={colleges.collegeID}>{college.name}
+                    {tasks.map(function (task) {
+                      if (task.collegeID === college.collegeID) {
+                        return (<li className="bulletlist" key={task.taskID}>
+                          <CheckBox id={task.taskID} />
+                          {task.task}
+                        </li>)
+                      }
+                    })}
+                  </ul>))}
+              </div>
           </div>
-          <div className="projects">
-            <div className="project-head">
-              <div
-                className="projects-title"
-                onClick={() => {
-                  setHideColleges(!hideColleges);
-                }}
-              >
+
+          <div className="projects-title" onClick={() => {setHideColleges(!hideColleges);}}>
                 <span className="title">Colleges</span>
-                <div
-                  className="inbox"
-                  onClick={() => {
-                    setSelectedCollege("INBOX");
-                    setSelectedCollegeName("Inbox");
-                  }}
-                >
+                <div className="inbox" onClick={() => { setSelectedCollege("INBOX"); setSelectedCollegeName("Inbox");
+                  }}>
+                  
                   <div className="first-item">
                     <span className="inboxtitle">Inbox</span>
                   </div>
                 </div>
-              </div>
+          </div>
               <span
                 className="quick-show"
                 onClick={() => {
@@ -85,7 +65,6 @@ export const MainContent = () => {
               >
                 <i className="fas fa-plus"></i>
               </span>
-            </div>
 
             <div
               className={`hide-list-wrapper  ${hideColleges ? "hide" : ""} ${show ? "show" : ""
@@ -98,27 +77,9 @@ export const MainContent = () => {
                 <AddCollege value={quickShow} showState={show} />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <br></br>
-        <div className="tasks">
+          <div className="tasks">
           <AddTask value={selectedCollege} />
-          <hr />
-        </div>
-        {/* <div>
-          <div>To Do List</div>
-          <div>
-            {colleges.map(college => (
-            <ul key={colleges.collegeID}>{college.name}
-            {tasks.map(function(task) {
-              if (task.collegeID === college.collegeID) {
-                return(<li key={task.taskID}>{task.task}</li>)
-              }
-            })}
-            </ul> ))}
-        </div>
-        </div> */}
+         </div>
         <div className="archivedTasks">
           <div 
             className="title"
